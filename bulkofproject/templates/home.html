@@ -1,0 +1,255 @@
+<html>
+
+{% set source = projects.get_source() %} <!-- source of project dict -->
+{% set name = source["name"] %}
+{% set github = source["github"] %}
+{% set youtube = source["youtube"] %}
+
+{% set greeting = data["greeting"] %}
+{% set doa = data["doa"] %}
+{% set doah = data["doah"] %}
+{% set job = data["job"] %}
+{% set embed = data["embed"] %}
+{% set gist = data["gist"] %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!--
+    <a class="navbar-brand" href="#">Ducks</a>
+    -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="navbar-left" href="/"><img src="{{url_for('static', filename='duck.png')}}" style="width:50px;height:50px;"></a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/"> Home </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/result"> Result </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/profile"> Profile </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/news"> News </a>
+            </li>
+            <li class="nav-link" style="float:right">
+                <a class="nav-link" href="/login"> Login </a>
+            </li>
+            <li class="nav-link" style="float:right">
+                <a class="nav-link" href="/registration"> Register </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<head>
+
+
+    <title> TRAE|Home </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+
+        // Wait for the page to load first
+    /*    window.onload = function() {
+            //Get a reference to the link on the page
+            // with an id of "mylink"
+            let btns = document.querySelectorAll('.btn');
+            for (i of btns) {
+                i.addEventListener('click', function() {
+                    subject =this.id;
+                    let request = new XMLHttpRequest();
+                    request.open("GET", "/teachers?subject=" + subject);
+                    request.send();
+                    return false;
+                });
+            }
+        }
+*/
+    </script>
+
+
+    <style>
+        h1{
+            font-size: 5em;
+
+        }
+
+        h3{
+            text-align: center;
+            font-size: 2em;
+            font-family: "Lucida Console", Courier, monospace;
+            color: white;
+        }
+
+        .button {
+            background-color: Transparent;
+            border: none;
+            background-color: Transparent;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: Transparent;
+            background-color: Transparent;
+            border: 0px solid #4CAF50;
+        }
+        body{
+            background-color: #243447;
+        }
+
+        .btn{
+            position: relative;
+            height:150px;
+            border: 2px solid #41f321;
+            margin: 10px;
+            display: inline-block;
+            text-decoration: #41f321;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            overflow: hidden;
+            font-size: 24px;
+            color: white;
+            width: 15em;
+            text-align: center;
+            line-height: 100px;
+
+        }
+
+
+
+        .btn:hover{
+            color: #111;
+        }
+
+        .btn span{
+            position: absolute;
+            display: block;
+            width: 0px;
+            height: 0px;
+            transform: translate(-50%,-50%);
+            border-radius: 100%;
+            transition: width 0.5s, height 0.5s;
+            z-index: -1;
+        }
+
+        .btn1 span {background: #4bc970;}
+        .btn2 span {background: #51d7f5;}
+        .btn3 span {background: #ebd026;}
+        .btn4 span {background: #fc4747;}
+        .btn5 span {background: #518050;}
+        .btn6 span {background: #865be3;}
+        .btn7 span {background: #6ae6cd;}
+
+
+
+
+        .btn:hover span{
+            width: 750px;
+            height: 750px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row justify-content-end" style="padding-top: 2%; padding-bottom: 2%; padding: 2%;">
+
+        <div class="col-3" style="text-align: right;">
+
+
+            <button class="button button1" onclick="window.location.href='/meme';"> </button>
+            <button class="button button1" onclick="window.location.href='/whoami';"> </button>
+        </div>
+
+    </div>
+
+    <div class="row justify-content-center" style="text-align: center;">
+        <button class="button button2" onclick="window.location.href='/rfg'"><img src="{{url_for('static', filename='duck.png')}}" style="width:150px;height:150px;">
+            <!--<h1>Ducks</h1>-->
+        </button>
+    </div>
+
+
+    <div class="row justify-content-center" style="padding-top: 5%; padding-bottom: 1%; text-align: center;">
+        <h3>Welcome to the DNHS</h3>
+    </div>
+    <div class="row justify-content-center" style="padding-top: 0%; padding-bottom: 1%; text-align: center;">
+        <h3>Teacher Rating And Evaluation</h3>
+    </div>
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="{{ url_for('getTeachers', subject='Math') }}" class="btn btn1" id="Math"><span></span>Math</a>
+                    <a href="{{ url_for('getTeachers', subject='English') }}" class="btn btn2" id="English"><span></span>English</a>
+                    <a href="{{ url_for('getTeachers', subject='Language') }}" class="btn btn3" id="Language"><span></span>Language</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="{{ url_for('getTeachers', subject='History') }}" class="btn btn4" id="History"><span></span>History</a>
+                    <a href="{{ url_for('getTeachers', subject='Science') }}" class="btn btn5" id="Science"><span></span>Science</a>
+                    <a href="{{ url_for('getTeachers', subject='Elective') }}" class="btn btn6" id="Elective"><span></span>Elective</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="{{ url_for('getTeachers', subject='ENS') }}" class="btn btn7" id="ENS"><span></span>ENS</a>
+                </td>
+            </tr>
+        </table>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function (e){
+            $('.btn').on('mouseenter', function (e){
+            x = e.pagex -$(this).offset().left;
+            y = e.pagex -$(this).offset().top;
+            $(this).find('span').css({top:y,left:x})
+        })
+            $('.btn').on('mouseout', function (e){
+            x = e.pagex -$(this).offset().left;
+            y = e.pagex -$(this).offset().top;
+            $(this).find('span').css({top:y,left:x})
+        })
+    })
+</script>
+
+</body>
+<!--
+<div class="footer">
+    <p>This is my test footer</p>
+</div>
+-->
+
+
+</html>
+
+<!--
+PNG:
+Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+-->
+
+<!--
+SVG:
+Icons made by <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+-->
