@@ -1,0 +1,258 @@
+<html>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!--
+    <a class="navbar-brand" href="#">Ducks</a>
+    -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="navbar-left"><img src="{{url_for('static', filename='duck.png')}}" style="width:50px;height:50px;"></a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/"> Home </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='Math') }}"> Math </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='English') }}"> English </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='Science') }}"> Science </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='Language') }}"> Foreign Language </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='History') }}"> History </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='ENS') }}"> ENS </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="{{ url_for('result', subject='Elective') }}"> Electives </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/login"> Login </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/registration"> Register </a>
+            </li>
+            <li class="nav-link">
+                <a class="nav-link" href="/profile"> Profile </a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+        var color;
+        var score;
+        var count;
+        var list= '{{ teacherList }}'
+        list = list.replaceAll("&#34;", "\"")
+        teacherList = JSON.parse(list)
+
+        $(document).ready(function() {
+            //Prepare Element selectors
+            var cssElem = $("#Dynam"), rowElem = $("#rows"), columnElem = $("#columns"), appElem = $("#app");
+            var noItems = $(".item").length,defaultColumns = 4;
+
+            //Init default state
+            cssElem.html(".container .item {flex: 0 0 calc(" + (100 / defaultColumns) + "% - 1em);}");
+            columnElem.val(defaultColumns);
+            rowElem.val(Math.ceil(noItems / columnElem.val()));
+
+            //Add listeners to change
+            appElem.on("DOMSubtreeModified", function() {
+                noItems = $(".item").length;
+                rowElem.val(Math.ceil(noItems / columnElem.val()));
+            });
+            columnElem.on("change", function() {
+                rowElem.val(Math.ceil(noItems / columnElem.val()));
+                cssElem.html(".container .item {flex: 0 0 calc(" + (100 / columnElem.val()) + "% - 1em);}");
+            });
+            rowElem.on("change", function() {
+                columnElem.val(Math.ceil(noItems / rowElem.val()));
+                cssElem.html(".container .item {flex: 0 0 calc(" + (100 / columnElem.val()) + "% - 1em);}");
+            });
+        });
+
+
+
+        {% raw %}
+
+        const COLORS = ['#FE9', '#9AF', '#F9A', "#AFA", "#FA7"];
+
+        {% endraw %}
+        function addItem(container, template, count) {
+            color = COLORS[_.random(COLORS.length - 1)];
+            name = teacherList[count][1]
+            id = teacherList[count][0]
+            score = teacherList[count][3].toFixed(2);
+
+            container.append(Mustache.render(template, {
+                color,
+                score,
+                name,
+                id
+            }));
+        }
+
+        $(() => {
+            const tmpl = $('#item_template').html()
+            const container = $('#app');
+
+            for (let i = 0; i < teacherList.length ; i++) {
+                addItem(container, tmpl,i);
+
+            }
+
+            $('#add_el').click(() => {
+                addItem(container, tmpl);
+            })
+
+            container.on('click', '.del_el', (e) => {
+                $(e.target).closest('.item').remove();
+            });
+        });
+
+        $(document).ready(function(){
+            // Check Radio-box
+            $(".rating input:radio").attr("checked", false);
+
+            $('.rating input').click(function () {
+                $(".rating").removeClass('checked');
+                $(this).parent().addClass('checked');
+            });
+
+            $('input:radio').change(
+                function(){
+                    var userRating = this.value;
+                    id= $(this).attr('name');
+                    teacherId = id.substr(id.indexOf("[")+1, id.indexOf("]")-id.indexOf("[")-1);
+                    teacherName = $(this).parents().closest('.item').find('.teacherName').text();
+                    alert(userRating + " star for Teacher id = " + teacherId + " teacher name = " + teacherName);
+
+                    let request = new XMLHttpRequest();
+                    request.open("POST", "/submitRating?teacherId=" + teacherId +"&rating=" + userRating+"&teacherName=" + teacherName);
+                    request.send();
+
+                    $(this).parents().closest('.item').find('.result').innerText = result;
+
+                });
+        });
+
+        function myFunc(vars) {
+            return vars
+        }
+    </script>
+
+
+    <style id="Dynam"></style>
+
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        .container .item {
+            min-height: 120px;
+            margin: 0.25em 0.5em;
+            overflow: hidden;
+            text-align: center;
+        }
+
+
+
+        .txt-center {
+            text-align: center;
+        }
+        .hide {
+            display: none;
+        }
+
+        .clear {
+            float: none;
+            clear: both;
+        }
+
+        .rating {
+            display:flex;
+            width:100%;
+            justify-content: center;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+            position: relative;
+
+        }
+
+
+        .rating > label {
+            float: right;
+            display: inline;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            width: 1.1em;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .rating > label:hover,
+        .rating > label:hover ~ label,
+        .rating > input.radio-btn:checked ~ label {
+            color: transparent;
+        }
+
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before,
+        .rating > input.radio-btn:checked ~ label:before,
+        .rating > input.radio-btn:checked ~ label:before {
+            content: "\2605";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+        body{
+            background-color: #243447;
+        }
+    </style>
+</head>
+
+<body>
+<p>   </p>
+<p>   </p>
+
+
+<div id="app" class="container">
+</div>
+{% raw %}
+<template id="item_template">
+    <div class="item" style="background: {{ color }}">
+        <p> </p>
+        <p class="teacherName">{{ name }}</p>
+        <p class="teacherScore">Rating Result: {{ score }}</p>
+    </div>
+</template>
+{% endraw %}
+</body>
+</html>

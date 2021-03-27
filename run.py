@@ -1,5 +1,6 @@
 #imports
 ##import config from __init__
+from flask import render_template
 from bulkofproject import app
 
 #run project

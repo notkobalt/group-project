@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Group Project</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="main.css" type="text/css" rel="stylesheet"/>
+    <!-- scripts for navbar/menu-->
+    <script type="text/javascript" src="klassenlijst.js"></script>
+    <script type="text/javascript" src="hamburger.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<!-- Nav bar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="#">The Group Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Rate a Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Recent Reviews</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Reviews by Category
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Adventure</a>
+                    <a class="dropdown-item" href="#">RPG</a>
+                    <a class="dropdown-item" href="#">Simulation</a>
+                    <a class="dropdown-item" href="#">Strategy</a>
+                    <a class="dropdown-item" href="#">MMO</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Search Reviews</a>
+            </li>
+        </ul>
+        <div>
+
+        </div>
+    </div>
+    <!-- log in button in navbar-->
+    <!--</div>
+    <a class="button" href="/login" role="button">Login</a>
+    <div>-->
+        <!-- alligns right-->
+    <!--   <ul class="nav navbar-nav navbar-right">
+           <li class="nav-item">
+               <a class="nav-link" href="/profile">View Profile</a>
+           </li>
+       </ul>
+   </div>-->
+
+</nav>
+
+<style>
+
+.button {
+background-color: white;
+ color: black;
+ border: 2px solid #000000; /* black */
+ transition-duration: 0.4s;
+}
+
+.button:hover {
+ background-color: #000000; /* black */
+ color: white;
+}
+body {
+ background-image:url("https://media.discordapp.net/attachments/821108170793549847/824861482209640468/scrolling-gradient.png");
+ background-position: center center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+   font-family: verdana;
+}
+head {
+   font-family: verdana;
+   }
+</style>
+
+{% block pagecontent %}
+{% endblock %}
+
+
+</html>
