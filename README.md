@@ -1,6 +1,6 @@
 # Project Plan
 
-#Idea: Game Review
+Idea: Game Review
 - https://docs.google.com/document/d/1EFlapSLtudKA0r42AZ46T57u7ksnPDTYismk6XoxVEc/edit?usp=sharing
 - Runtime link: http://76.176.48.196:5671/
 
