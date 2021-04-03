@@ -13,3 +13,7 @@ def dylan():
     eqs = equations(x)
 
     return render_template('classesminilab/dylan.html', eqs = eqs.position)
+
+@lab.route('/jacob')
+def jacob():
+    return render_template('classesminilab/jacob.html')
