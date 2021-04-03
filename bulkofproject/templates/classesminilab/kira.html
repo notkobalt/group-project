@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Powers of 2</title>
+</head>
+<body>
+
+<form id="fibForm" action="/classesminilab/kiralab" method="POST" >
+    <input name="series" id="series" type="number" min="2" max="100" >
+    <button>Go!</button>
+</form>
+
+Displaying {{calculation.series}} powers of 2:
+{{calculation.list}}
+
+Sequence for series: {{calculation.series}} number: {{calculation.number}}
+{% for i in range (calculation.series) %}
+{{calculation.get_sequence(i)}}
+{% endfor %}
+
+</body>
+</html>

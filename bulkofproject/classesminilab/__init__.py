@@ -1,7 +1,9 @@
 #import flask and blueprints
-from flask import Blueprint, render_template, __name__
+import requests
+from flask import Blueprint, render_template, __name__, request
 #import lab files
 from bulkofproject.classesminilab.dylanlab import equations as equations
+from bulkofproject.classesminilab.kiralab import Calc
 
 lab = Blueprint('lab', __name__)
 
@@ -13,6 +15,13 @@ def dylan():
     eqs = equations(x)
 
     return render_template('classesminilab/dylan.html', eqs = eqs.position)
+
+@lab.route('/kira', methods = ["GET", "POST"])
+def kira():
+    if request.method =='POST':
+        return render_template("classesminilab/kira.html", calculation = Calc(int(request.form.get("series"))))
+    return render_template('classesminilab/kira.html', calculation = Calc(5))
+
 
 @lab.route('/jacob')
 def jacob():
