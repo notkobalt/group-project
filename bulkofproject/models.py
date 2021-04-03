@@ -3,8 +3,13 @@
 from bulkofproject import db
 
 #database tables (models)
-##login
-class login(db.Model):
+##login db
+class users(db.Model):
+    #table columns
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(15), unique = True, nullable = False)
     password = db.Column(db.String(), nullable = False)
+
+    #callable attributes
+    def __repr__(self):
+        return f"user('{self.username}', '{self.password}')"

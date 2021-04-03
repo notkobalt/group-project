@@ -3,6 +3,10 @@
 from flask import render_template
 ##import config from __init__
 from bulkofproject import app, db
+from bulkofproject.classesminilab import lab
+
+#register blueprints
+app.register_blueprint(lab, url_prefix ='/lab')
 
 #app routes
 @app.route('/')
@@ -12,3 +16,7 @@ def home():
 @app.route('/search')
 def search():
     return render_template('search.html')
+
+
+
+
