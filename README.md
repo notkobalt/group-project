@@ -29,3 +29,10 @@ Dylan:https://github.com/notkobalt/group-project/blob/main/bulkofproject/classes
 3: list, dict, dictid, function objects created <br>
 4: getters used to pull data from class, [missed point because it does not print the output] <br>
 5: [missed point because wow is not highlighted] <br>
+
+Jacob: https://github.com/notkobalt/group-project/blob/e0873bb396498b340c757a025a9f598a94d09f32/bulkofproject/classesminilab/jacoblab.py
+1: Code for mini-lab located in jacoblab.py file (contains the class) <br>
+2: Defines "Characters" class containing characters from shows or video games. <br>
+3: Creates the object from the class "Characters" when displayed. <br>
+4: Uses the getters "series, list, dictid and dict"; however I miss a point due to error in print. <br>
+5: I failed to try to adding this class on the web and displaying it correctly; missed point. <br>
