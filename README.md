@@ -24,8 +24,8 @@ Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60
 5. [I Miss a point on this, I was unable to figure out why I can't input numbers similarly to the fibonacci website]<br>
 
 Dylan:https://github.com/notkobalt/group-project/blob/main/bulkofproject/classesminilab/dylanlab.py
-1: "classesminilab" blueprint contains .py file with mini-lab code
-2: class "equations" exists
-3: list, dict, dictid, function objects created
-4: getters used to pull data from class, [missed point because it does not print the output]
-5: [missed point because wow is not highlighted]
+1: "classesminilab" blueprint contains .py file with mini-lab code <br>
+2: class "equations" exists <br>
+3: list, dict, dictid, function objects created <br>
+4: getters used to pull data from class, [missed point because it does not print the output] <br>
+5: [missed point because wow is not highlighted] <br>
