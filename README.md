@@ -14,3 +14,11 @@ Crossover group: p4-fishes (We pull from game api and then make our own with rat
 - REST API for list of games
 - Random game recommendation function
 - https://www.igdb.com/api
+
+# Mini Lab 4/2
+Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60df651c50d49b3769
+1: All material for my lab is located in "kiralay.py" and "kira.html"
+2. I created a class called "Calc" which handles calculations.
+3. Objects are created when testing numbers with the calculations
+4. Values are returned and are able to be displayed on the website
+5. [I Miss a point on this, I was unable to figure out why I can't input numbers similarly to the fibonacci website]
