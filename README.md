@@ -17,13 +17,13 @@ Crossover group: p4-fishes (We pull from game api and then make our own with rat
 
 # Mini Lab 4/2
 Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60df651c50d49b3769<br>
-1: All material for my lab is located in "kiralay.py" and "kira.html"<br>
+1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
 2. I created a class called "Calc" which handles calculations.<br>
 3. Objects are created when testing numbers with the calculations<br>
 4. Values are returned and are able to be displayed on the website<br>
 5. [I Miss a point on this, I was unable to figure out why I can't input numbers similarly to the fibonacci website]<br>
 
-Dylan:https://github.com/notkobalt/group-project/blob/main/bulkofproject/classesminilab/dylanlab.py
+Dylan:https://github.com/notkobalt/group-project/blob/main/bulkofproject/classesminilab/dylanlab.py <br>
 1: "classesminilab" blueprint contains .py file with mini-lab code <br>
 2: class "equations" exists <br>
 3: list, dict, dictid, function objects created <br>
