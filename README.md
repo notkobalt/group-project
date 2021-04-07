@@ -36,3 +36,11 @@ Jacob: https://github.com/notkobalt/group-project/blob/e0873bb396498b340c757a025
 3: Creates the object from the class "Characters" when displayed. <br>
 4: Uses the getters "series, list, dictid and dict"; however I miss a point due to error in print. <br>
 5: I failed to try to adding this class on the web and displaying it correctly; missed point. <br>
+
+#Mini Lab Revision 4/6
+Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
+1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
+2. I created a class called "Calc" which handles calculations.<br>
+3. Objects are created when testing numbers with the calculations<br>
+4. Values are returned and are able to be displayed on the website<br>
+5. I fixed POST/GET functions so that the page updates when the user inputs a number, creating a new string of numbers <br>
