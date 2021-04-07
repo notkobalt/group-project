@@ -1,3 +1,5 @@
+import requests
+
 class Calc:
     def __init__(self, series):
 

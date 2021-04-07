@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+
+        .container{
+            position:relative;
+            width:90vw;
+            height: 90vh;
+            border: 3px solid white;
+            margin: auto;
+
+
+        }
+
+        .element{
+            position:absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            margin: auto;
+            background: orange;
+            width: 50vw; height: 60vh;
+            vertical-align: middle;
+
+        }
+
+        .login{
+            text-align: center;
+            vertical-align: middle;
+            width: 50vw; height: 50vh;
+            color: black; font-size: 2rem;
+
+        }
+        input[type="text"],
+        input[type="password"],
+
+        textarea,
+        select {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            font-size: 25px;
+            height: auto;
+            margin: 0;
+            outline: 0;
+            padding: 13px;
+            width: 100%;
+            background-color: #e8eeef;
+            color: #8a97a0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+            margin-bottom: 30px;
+        }
+
+        input[type="submit"],
+        input[type="button"]
+        {
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            background-color: #4bc970;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            border-radius: 5px;
+            width: 100%;
+            border: 1px solid #3ac162;
+            border-width: 1px 1px 3px;
+            box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+            margin-bottom: 10px;
+        }
+
+
+        body{
+            height: 100vh;
+            display:flex;
+            background-image: url(../static/dnhs.jpg);
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1{
+            font-size: 18px;
+
+            font-style: normal;
+            color: #cc0000;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="element">
+        <div class="login">
+            <script src="script.js"></script>
+            <center>
+                <h3>Login Here</h3>
+                <h1> {{ error }} </h1>
+                <form action="/checkuser" method="post">
+                    <table>
+                        <tr>
+                            <td>Username:</td>
+                            <td>
+                                <input  type="text"  name="user">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Password:</td>
+                            <td>
+                                <input  type="password" name="user_pass">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <input type="submit" value="Login" />
+                            </td>
+
+                            <td>
+                                <input type="button" onclick="window.location.href='/registration';" value="Register" />
+                            </td>
+                        </tr>
+                        <table>
+                            <center>
+                            </center>
+                        </table>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
