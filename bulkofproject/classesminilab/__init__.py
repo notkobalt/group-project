@@ -19,7 +19,8 @@ def dylan():
 @lab.route('/kira', methods = ["GET", "POST"])
 def kira():
     if request.method =='POST':
-        return render_template("classesminilab/kira.html", calculation = Calc(int(request.form.get("series"))))
+        calculation = Calc(int(request.form.get("series")))
+        return render_template(("classesminilab/kira.html"), calculation = calculation)
     return render_template('classesminilab/kira.html', calculation = Calc(5))
 
 
