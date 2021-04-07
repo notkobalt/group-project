@@ -20,8 +20,9 @@ def dylan():
         k1 = encrypted.key1
         k2 = encrypted.key2
         final = encrypted.end
+        clean = encrypted.endclean
 
-        return render_template('classesminilab/dylan.html', output = True, msg = msg, k1 = k1, k2 = k2, final = final)
+        return render_template('classesminilab/dylan.html', output = True, msg = msg, k1 = k1, k2 = k2, final = final, clean = clean)
     return render_template('classesminilab/dylan.html')
 
 @lab.route('/kira', methods = ["GET", "POST"])

@@ -18,8 +18,6 @@ class rsa:
             #append list
             output.append(C)
 
-        #turn output into a string
-        output = ''.join(output)
         #return output
         return output
 
@@ -38,7 +36,11 @@ class rsa:
 
     @property
     def end(self):
-        return self.func(message, key1, key2)
+        return self.func(self._message, self._key1, self._key2)
+
+    @property
+    def endclean(self):
+        return ''.join(self.func(self._message, self._key1, self._key2))
 
 #test run
 if __name__ == '__main__':
@@ -52,3 +54,4 @@ if __name__ == '__main__':
     print(encoded.key1)
     print(encoded.key2)
     print(encoded.end)
+    print(encoded.endclean)
