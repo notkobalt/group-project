@@ -6,8 +6,37 @@
 </head>
 <body>
 <div>
-    <h2>Fib Test</h2>
-    <p>Table Num: {{eqs}}</p>
+    <form action="#" method="post" class="dlabinput">
+        <!-- message request -->
+        <div class="from-group">
+            <label for="message">Message: </label>
+            <input type="text" name="message" id="message" class="form-control">
+        </div>
+
+        <!-- key1 request -->
+        <div class="from-group">
+            <label for="key1">Key 1: </label>
+            <input type="text" name="key1" id="key1" class="form-control">
+        </div>
+
+        <!-- key2 request -->
+        <div class="from-group">
+            <label for="key2">Key 2: </label>
+            <input type="text" name="key2" id="key2" class="form-control">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-success">Submit</button>
+        </div>
+    </form>
 </div>
+
+{% if output == True %}
+<div>
+    <p>Message: {{ msg }}</p>
+    <p>Key 1: {{ k1 }}</p>
+    <p>Key 2: {{ k2 }}</p>
+    <p>Encrypted: {{ final }}</p>
+</div>
+{% endif %}
 </body>
 </html>

@@ -1,54 +1,54 @@
-class equations:
-    #perameters
-    def __init__(self, limit):
-        #define peramaters
-        if limit < 0 or limit > 10:
-            raise ValueError("series must be between 0 and 10")
-        self._limit = limit
-        self._list = [list]
-        self._dict = {}
-        self._dictID = 0
+#class function
+class rsa:
+    def __init__(self, message, key1, key2):
+        self._message = message
+        self._key1 = key1
+        self._key2 = key2
 
-        self.function()
+        self.func(message, key1, key2)
 
-    #functions
-    def function(self):
-        limit = self._limit
-        array = [0,1]
-        while limit > 0:
-            self.input_data(array[0])
-            array = [array[1], array[0] + array[1]]
-            limit = limit - 1
+    def func(self, message, key1, key2):
+        #empty variable
+        output = []
+        #loop for entire message
+        for i in range (0, len(message)):
+            char = message[i]
+            #replace letters in message w/ encrypted values
+            C = chr((ord(char) ^ key1) % key2)
+            #append list
+            output.append(C)
 
-    def input_data(self, num):
-        self._list.append(num)
-        self._dict[self._dictID] = self._list.copy()
-        self._dictID = self._dictID + 1
+        #turn output into a string
+        output = ''.join(output)
+        #return output
+        return output
 
-    #getters
+    #callable properties "getters"
     @property
-    def series(self):
-        self._limit
+    def message(self):
+        return self._message
 
     @property
-    def list(self):
-        self._list
+    def key1(self):
+        return self._key1
 
     @property
-    def position(self):
-        return self._list[self._dictID - 1]
+    def key2(self):
+        return self._key2
 
-    #method access
-    def get_method(self, num):
-        self._dict[num]
+    @property
+    def end(self):
+        return self.func(message, key1, key2)
 
-#test
-##test num
-x = 7
-
-#build class
-eqs = equations(x)
-
-#get data from built class
-print({eqs.position})
-print({eqs.list})
+#test run
+if __name__ == '__main__':
+    #testing values
+    message = "Hello World!"
+    key1 = 29
+    key2 = 12450239511112411112513261923421
+    #construct class
+    encoded = rsa(message, key1, key2)
+    print(encoded.message)
+    print(encoded.key1)
+    print(encoded.key2)
+    print(encoded.end)
