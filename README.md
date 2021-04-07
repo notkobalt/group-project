@@ -37,6 +37,13 @@ Jacob: https://github.com/notkobalt/group-project/blob/e0873bb396498b340c757a025
 4: Uses the getters "series, list, dictid and dict"; however I miss a point due to error in print. <br>
 5: I failed to try to adding this class on the web and displaying it correctly; missed point. <br>
 
+Lucas: <br>
+1: lucaslabnew.py and lucas.html has my relevant lab code<br>
+2. created a class titled 'equations'<br>
+3. any time you enter a number, objects are made<br>
+4. [Missed a point here. Html file is broken]<br>
+5. [Missed a point here as well, no wow]<br>
+
 #Mini Lab Revision 4/6
 Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
 1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
