@@ -1,5 +1,6 @@
 class numlist:
     def __init__(self, series):
+        """Built in validation and exception"""
         if series < 2 or series > 100:
             raise ValueError("Series must be between 2 and 100")
         self._series = series
@@ -14,7 +15,7 @@ class numlist:
 
     def calc_series(self):
         limit = self._series
-        f = [0, 1]
+        f = [0, 1]  # fibonacci starting array/list
         while limit > 0:
             self.set_data(f[0])
             f = [f[1], f[0] + f[1]]
@@ -44,10 +45,14 @@ class numlist:
 # Tester Code
 if __name__ == "__main__":
     '''Value for testing'''
-    n = 20
+    n = 21
+    '''Constructor of Class object'''
     numlist = numlist(n)
 
-    print(f"numlist number for {n} = {numlist.number}")
-    print(f"numlist series for {n} = {numlist.list}")
+    '''Using getters to obtain data from object'''
+    print(f"Fibonacci number for {n} = {numlist.number}")
+    print(f"Fibonacci series for {n} = {numlist.list}")
 
+    '''Using method to get data from object'''
     for i in range(n):
+        print(f"Fibonacci sequence {i + 1} = {numlist.get_sequence(i)}")
