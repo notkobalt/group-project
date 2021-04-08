@@ -39,3 +39,11 @@ def kira():
 @lab.route('/jacob')
 def jacob():
     return render_template('classesminilab/jacob.html')
+
+@lab.route('/lucas')
+def lucas():
+    return render_template('classesminilab/lucas.html')
+
+@lab.route('/roop')
+def roop():
+    return render_template('classesminilab/roop.html')
