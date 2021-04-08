@@ -6,7 +6,10 @@ from bulkofproject.classesminilab.dylanlab import rsa as rsa
 
 from bulkofproject.classesminilab.kiralab import Calc
 
+from bulkofproject.classesminilab.jacobminilab.jacoblab import Characters
+
 lab = Blueprint('lab', __name__)
+
 
 @lab.route('/dylan', methods = ['GET', 'POST'])
 def dylan():
