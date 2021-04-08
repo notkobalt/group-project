@@ -52,7 +52,6 @@ Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8
 4. Values are returned and are able to be displayed on the website<br>
 5. I fixed POST/GET functions so that the page updates when the user inputs a number, creating a new string of numbers <br>
 
-# Mini Lab Revision 4/7 <br>
 Jacob: https://github.com/notkobalt/group-project/commit/64d9192d4b5f992e6aa1445390b6fb024f5c8e6d <br>
 1: Material and code still located in jacoblab.py and jacob.html (both found in jacobminilab directory. +1 <br>
 2: Created class "Characters" that have some characters from shows/video games. +1 <br>
