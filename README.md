@@ -44,7 +44,7 @@ Lucas: <br>
 4. [Missed a point here. Html file is broken]<br>
 5. [Missed a point here as well, no wow]<br>
 
-#Mini Lab Revision 4/6
+# Mini Lab Revision 4/6
 Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
 1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
 2. I created a class called "Calc" which handles calculations.<br>

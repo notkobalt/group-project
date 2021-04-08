@@ -1,16 +1,12 @@
 class numlist:
     def __init__(self, series):
-        if series < 2 or series > 100:
-            raise ValueError("Series must be between 2 and 100")
+        if series < 3 or series > 100:
+            raise ValueError("Series must be between 3 and 100")
         self._series = series
         self._list = []
         self._dict = {}
         self._dictID = 0
-        # Duration timeElapsed;
-        # Instant start = Instant.now();  // time capture -- start
         self.calc_series()
-        # Instant end = Instant.now();    // time capture -- end
-        # this.timeElapsed = Duration.between(start, end);
 
     def calc_series(self):
         limit = self._series
@@ -40,14 +36,14 @@ class numlist:
     def get_sequence(self, nth):
         return self._dict[nth]
 
-
-# Tester Code
 if __name__ == "__main__":
     '''Value for testing'''
-    n = 20
+    n = 21
+    '''Constructor of Class object'''
     numlist = numlist(n)
 
-    print(f"numlist number for {n} = {numlist.number}")
-    print(f"numlist series for {n} = {numlist.list}")
+    print(f" number for {n} = {numlist.number}")
+    print(f" series for {n} = {numlist.list}")
 
     for i in range(n):
+        print(f" sequence {i + 1} = {numlist.get_sequence(i)}")
