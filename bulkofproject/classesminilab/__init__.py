@@ -6,7 +6,10 @@ from bulkofproject.classesminilab.dylanlab import rsa as rsa
 
 from bulkofproject.classesminilab.kiralab import Calc
 
+from bulkofproject.classesminilab.jacobminilab.jacoblab import Characters
+
 lab = Blueprint('lab', __name__)
+
 
 @lab.route('/dylan', methods = ['GET', 'POST'])
 def dylan():
@@ -36,3 +39,11 @@ def kira():
 @lab.route('/jacob')
 def jacob():
     return render_template('classesminilab/jacob.html')
+
+@lab.route('/lucas')
+def lucas():
+    return render_template('classesminilab/lucas.html')
+
+@lab.route('/roop')
+def roop():
+    return render_template('classesminilab/roop.html')

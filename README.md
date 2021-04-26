@@ -44,10 +44,17 @@ Lucas: <br>
 4. [Missed a point here. Html file is broken]<br>
 5. [Missed a point here as well, no wow]<br>
 
-#Mini Lab Revision 4/6
+# Mini Lab Revision 4/6
 Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
 1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
 2. I created a class called "Calc" which handles calculations.<br>
 3. Objects are created when testing numbers with the calculations<br>
 4. Values are returned and are able to be displayed on the website<br>
 5. I fixed POST/GET functions so that the page updates when the user inputs a number, creating a new string of numbers <br>
+
+Jacob: https://github.com/notkobalt/group-project/commit/64d9192d4b5f992e6aa1445390b6fb024f5c8e6d <br>
+1: Material and code still located in jacoblab.py and jacob.html (both found in jacobminilab directory. +1 <br>
+2: Created class "Characters" that have some characters from shows/video games. +1 <br>
+3: Objects created from the Class in Python. +1 <br>
+4: Used the getters and fixed the printing issue on the website to make it display properly. +1 <br>
+5: Corrected my init blueprint and organized it to make it so random characters are shown according to how many characters the user wants to display up to 10. <br>

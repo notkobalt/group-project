@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jacob Class Mini Lab</title>
+</head>
+<body>
+<div class="jumbotron text-center row">
+    <div>
+        <h3>How many people do you think you can take on in a fight????????</h3>
+        <form id="fibForm" action="" method="POST" >
+            <input name="series" id="series" type="number" min="1" max="10" >
+            <button class="btn  my-2 my-sm-0 text-white bg-danger" type="submit"> CHOOSE YOUR CHARACTER!</button>
+
+        </form>
+    </div>
+    <div id="myDiv" class="col-md-6">
+        <h3>You are fighting -></h3>
+        <div id='prova' style='display:none'>{{Characters.list}}</div>
+        <script>
+            window.onload = function () {
+                    setTimeout(appeardiv,1000);
+                }
+                function appeardiv() {
+                    document.getElementById('prova').style.display= "block";
+                }
+        </script>
+
+
+    </div>
+
+
+</div>
+</div>
+</div>
+</body>
+</html>
