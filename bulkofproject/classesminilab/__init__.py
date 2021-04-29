@@ -1,5 +1,4 @@
 #import flask and blueprints
-import requests
 from flask import Blueprint, render_template, __name__, request
 #import lab files
 from bulkofproject.classesminilab.dylanlab import rsa as rsa
@@ -8,10 +7,10 @@ from bulkofproject.classesminilab.kiralab import Calc
 
 from bulkofproject.classesminilab.jacobminilab.jacoblab import Characters
 
-lab = Blueprint('lab', __name__)
+classesminilab = Blueprint('classes', __name__)
 
 
-@lab.route('/dylan', methods = ['GET', 'POST'])
+@classesminilab.route('/dylan', methods = ['GET', 'POST'])
 def dylan():
     if request.method == 'POST':
         message = str(request.form.get('message'))
@@ -28,7 +27,7 @@ def dylan():
         return render_template('classesminilab/dylan.html', output = True, msg = msg, k1 = k1, k2 = k2, final = final, clean = clean)
     return render_template('classesminilab/dylan.html')
 
-@lab.route('/kira', methods = ["GET", "POST"])
+@classesminilab.route('/kira', methods = ["GET", "POST"])
 def kira():
     if request.method =='POST':
         calculation = Calc(int(request.form.get("series")))
@@ -36,14 +35,14 @@ def kira():
     return render_template('classesminilab/kira.html', calculation = Calc(5))
 
 
-@lab.route('/jacob')
+@classesminilab.route('/jacob')
 def jacob():
     return render_template('classesminilab/jacob.html')
 
-@lab.route('/lucas')
+@classesminilab.route('/lucas')
 def lucas():
     return render_template('classesminilab/lucas.html')
 
-@lab.route('/roop')
+@classesminilab.route('/roop')
 def roop():
     return render_template('classesminilab/roop.html')
