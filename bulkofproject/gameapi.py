@@ -1,12 +1,20 @@
 import requests
+from flask import request
 
-url = "https://rawg-video-games-database.p.rapidapi.com/games"
+searchurl = "https://api.rawg.io/api/games?key=8303ff9c44c54030a13e5ea703d768f8&search="
 
-headers = {
-    'x-rapidapi-key': "f4e47a0331msh068fd5299f4fe60p13031ejsn3acdd247ddd3",
-    'x-rapidapi-host': "rawg-video-games-database.p.rapidapi.com"
-}
 
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET", "https://api.rawg.io/api/games?key=8303ff9c44c54030a13e5ea703d768f8&dates=2019-09-01")
 
-#print(response.text)
+print(response.text)
+
+def search():
+    if request.method == 'POST':
+        #search
+        searchurl = "https://api.rawg.io/api/games?key=8303ff9c44c54030a13e5ea703d768f8&search="
+        searchentry = request.form['search']
+        searchlink = searchurl + searchentry
+
+        searchresponse = requests.request("GET", searchlink)
+
+        return searchresponse
