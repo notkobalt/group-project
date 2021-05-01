@@ -5,7 +5,7 @@ from random import randrange
 def listgen(size):
     list = []
     for i in range(0, size):
-        index = randrange(0, 100)
+        index = randrange(65, 93)
         list.append(index)
     return list
 
