@@ -42,8 +42,8 @@ if __name__ == "__main__":
     '''Constructor of Class object'''
     numlist = numlist(n)
 
-    print(f" number for {n} = {numlist.number}")
-    print(f" series for {n} = {numlist.list}")
+    #print(f" number for {n} = {numlist.number}")
+    #print(f" series for {n} = {numlist.list}")
 
-    for i in range(n):
-        print(f" sequence {i + 1} = {numlist.get_sequence(i)}")
+    #for i in range(n):
+        #print(f" sequence {i + 1} = {numlist.get_sequence(i)}")
