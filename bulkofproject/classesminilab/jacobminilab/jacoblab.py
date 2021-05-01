@@ -53,4 +53,4 @@ class Characters:
 if __name__ == "__main__":
     a = 1
     chars = Characters(a/a)
-    print(f"Here is a character from a show/video game! = {chars.list}")
+    #print(f"Here is a character from a show/video game! = {chars.list}")
