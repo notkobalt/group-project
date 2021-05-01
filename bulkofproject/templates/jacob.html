@@ -6,15 +6,18 @@
 </head>
 <body>
 <div class="jumbotron text-center row">
+    <!--Button for user input for them to decide how many characters they want-->
     <div>
         <h3>How many people do you think you can take on in a fight????????</h3>
         <form id="fibForm" action="" method="POST" >
+            <!-- Using the minimum and maximum input values in order to limit the number the user can put in -->
             <input name="series" id="series" type="number" min="1" max="10" >
             <button class="btn  my-2 my-sm-0 text-white bg-danger" type="submit"> CHOOSE YOUR CHARACTER!</button>
 
         </form>
     </div>
     <div id="myDiv" class="col-md-6">
+        <!-- Where the characters from my Class List will display and randomly show characters from that list -->
         <h3>You are fighting -></h3>
         <div id='prova' style='display:none'>{{Characters.list}}</div>
         <script>

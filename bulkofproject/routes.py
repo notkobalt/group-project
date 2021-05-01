@@ -6,12 +6,13 @@ from bulkofproject import app, db
 from bulkofproject.classesminilab import classesminilab
 from bulkofproject.bubblesortminilab import bubblesortminilab
 from bulkofproject.classesminilab.jacobminilab import jacobblueprint
+from bulkofproject.classesminilab.jacobbubblelab import jacobbubblesort
 
 # register blueprints
 app.register_blueprint(classesminilab, url_prefix='/classes')
 app.register_blueprint(bubblesortminilab, url_prefix='/bubble_sort')
 app.register_blueprint(jacobblueprint, url_prefix='/jacobblueprint')
-
+app.register_blueprint(jacobbubblesort, url_prefix='/jacobbubblesort')
 
 
 # app routes
