@@ -8,6 +8,14 @@ from bulkofproject.bubblesortminilab.kirabubble import Sort
 #create blueprint
 bubblesortminilab = Blueprint('bubble_sort', __name__)
 
+
+@bubblesortminilab.route('/lucasbubble', methods = ['GET', 'POST'])
+def lucasbubble():
+    if request.method =='POST':
+        calclist = Sort((json.loads("[" + request.form.get("numb") + "]")))
+        return render_template(("bubblesortminilab/lucasbubble.html"), calclist = calclist)
+        return render_template(("bubblesortminilab/lucasbubble.html"), calclist = Sort([]))
+
 @bubblesortminilab.route('/dylan', methods = ['GET', 'POST'])
 def dylan():
     if request.method == 'POST':
@@ -47,3 +55,4 @@ def kira():
         calculation = Sort((json.loads("[" + request.form.get("series") + "]")))
         return render_template(("bubblesortminilab/kira.html"), calculation = calculation, original = request.form.get("series"))
     return render_template(("bubblesortminilab/kira.html"), calculation = Sort([4, 27, 0, 9]), original = "")
+
