@@ -44,9 +44,9 @@ if __name__ == "__main__":
 
     n = 18
     Numbers = Numby(n)
-    print(f" num for {n} = {Numbers.number}")
-    print(f" series for {n} = {Numbers.list}")
+    #print(f" num for {n} = {Numbers.number}")
+    #print(f" series for {n} = {Numbers.list}")
 
 
-    for i in range(n):
-        print(f"# {i+1} = {Numbers.get_sequence(i)}")
+    #for i in range(n):
+        #print(f"# {i+1} = {Numbers.get_sequence(i)}")

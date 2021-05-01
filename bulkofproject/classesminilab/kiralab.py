@@ -44,9 +44,9 @@ if __name__ == "__main__":
 
     calculation = Calc(n)
 
-    print(f"Numbers for {n} = {calculation.number}")
-    print(f"series for {n} = {calculation.list}")
+    #print(f"Numbers for {n} = {calculation.number}")
+    #print(f"series for {n} = {calculation.list}")
 
-    for i in range(n):
-        print(f"sequence {i + 1} = {calculation.get_sequence(i)}")
+    #for i in range(n):
+        #print(f"sequence {i + 1} = {calculation.get_sequence(i)}")
 
