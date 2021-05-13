@@ -2,6 +2,8 @@
 ##import flask components
 from flask import render_template
 ##import config from __init__
+import requests, json
+from flask import request
 from bulkofproject import app, db
 from bulkofproject.classesminilab import classesminilab
 from bulkofproject.bubblesortminilab import bubblesortminilab
@@ -21,6 +23,26 @@ def home() :
     return render_template('home.html')
 
 
-@app.route('/search')
-def search() :
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        #request
+        titleslist = []
+        displaylinks = ''
+        searchurl = "https://api.rawg.io/api/games?key=91edf65dde2d49c7a6519987ed7c1769&search="
+        searchentry = request.form['search']
+        searchlink = searchurl + searchentry
+
+        searchresponse = requests.request("GET", searchlink)
+        searchdump = searchresponse.json()
+        searchresults = searchdump['results']
+
+        #for display on front end
+        for item in searchresults:
+            titleslist.append(item['name'])
+
+        for index in titleslist:
+            displaylinks = displaylinks +  "<a href=#>" + index + "</a></br> "
+
+        return render_template(('search.html'), displaylinks = displaylinks)
     return render_template('search.html')
