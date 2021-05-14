@@ -1,3 +1,4 @@
+# The Class
 class numlist:
     def __init__(self, series):
         if series < 3 or series > 100:
