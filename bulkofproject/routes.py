@@ -46,3 +46,11 @@ def search():
 
         return render_template(('search.html'), displaylinks = displaylinks)
     return render_template('search.html')
+
+@app.route('/login')
+def login() :
+    return render_template('login.html')
+
+@app.route('/signup')
+def signup() :
+    return render_template('signup.html')

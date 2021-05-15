@@ -4,14 +4,14 @@
 {% block pagecontent %}
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Signup</title>
 </head>
 
 <body>
 
 <div class="banner">
     <div class="container">
-        <h1>⠀⠀⠀⠀⠀⠀⠀⠀⠀Login Here.</h1>
+        <h1>⠀⠀ ⠀⠀⠀⠀⠀ Sign up Here.</h1>
         <form method="POST" ID="formName" action=# class="form1">
             <p>
                 <label for="Username" class="floatLabel">Username</label>
@@ -21,10 +21,14 @@
                 <label for="password"  class="floatLabel">Password</label>
                 <input id="password" name="password" placeholder="Password" type="password" required="required">
             </p>
-            <p> <p> Don't have an account? <a href="/signup" style="color: white">Sign Up</a></p>
+            <p>
+                <label for="password"  class="floatLabel">Confirm Password</label>
+                <input id="confirmPassword" name="Confirm Password" placeholder="Confirm Password" type="password" required="required">
+            </p>
+            <p> <p> Have an account? <a href="/login" style="color: white">Login</a></p>
             <p>
 
-                <input type="submit" class="button button-primary" value="Login">
+                <input type="submit" class="button button-primary" value="Sign up">
             </p>
         </form>
 
