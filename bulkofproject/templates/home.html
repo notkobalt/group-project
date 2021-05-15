@@ -5,6 +5,147 @@
 
 
 <h1 style="font-family:tahoma"><b>RATE YOUR FAVORITE GAME HERE!</b></h1>
+</script>
+
+<style>
+    h1{
+        font-size: 5em;
+
+    }
+
+    h3{
+        text-align: center;
+        font-size: 2em;
+        font-family: "Lucida Console", Courier, monospace;
+        color: white;
+    }
+
+    .button {
+        background-color: Transparent;
+        border: none;
+        background-color: Transparent;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: Transparent;
+        background-color: Transparent;
+        border: 0px solid #4CAF50;
+    }
+    body{
+        background-color: #243447;
+    }
+
+    .btn{
+        position: relative;
+        height:150px;
+        border: 2px solid #41f321;
+        margin: 10px;
+        display: inline-block;
+        text-decoration: #41f321;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: 0.5s;
+        overflow: hidden;
+        font-size: 24px;
+        color: white;
+        width: 15em;
+        text-align: center;
+        line-height: 100px;
+
+    }
+
+
+
+    .btn:hover{
+        color: #111;
+    }
+
+    .btn span{
+        position: absolute;
+        display: block;
+        width: 0px;
+        height: 0px;
+        transform: translate(-50%,-50%);
+        border-radius: 100%;
+        transition: width 0.5s, height 0.5s;
+        z-index: -1;
+    }
+
+    .btn1 span {background: #4bc970;}
+    .btn2 span {background: #51d7f5;}
+    .btn3 span {background: #ebd026;}
+    .btn4 span {background: #fc4747;}
+    .btn5 span {background: #518050;}
+    .btn6 span {background: #865be3;}
+    .btn7 span {background: #6ae6cd;}
+
+
+
+
+    .btn:hover span{
+        width: 750px;
+        height: 750px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row justify-content-end" style="padding-top: 2%; padding-bottom: 2%; padding: 2%;">
+
+        <div class="col-3" style="text-align: right;">
+
+
+    </div>
+
+    <div class="row justify-content-center" style="text-align: center;">
+        <button class="button button2" onclick="window.location.href='/rfg'"><img src="{{url_for('static', filename='controller.png')}}" style="width:150px;height:150px;">
+            <!--<h1>Ducks</h1>-->
+        </button>
+    </div>
+
+<table align="center">
+    <tr>
+        <td>
+            <a href="{{ url_for('search', subject='Action') }}" class="btn btn1" id="Action"><span></span>Action</a>
+            <a href="{{ url_for('search', subject='Adventure') }}" class="btn btn2" id="English"><span></span>Adventure</a>
+            <a href="{{ url_for('search', subject='RPG') }}" class="btn btn3" id="Language"><span></span>RPG</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="{{ url_for('search', subject='Sim') }}" class="btn btn4" id="History"><span></span>Simulation</a>
+            <a href="{{ url_for('search', subject='Strategy') }}" class="btn btn5" id="Science"><span></span>Strategy</a>
+            <a href="{{ url_for('search', subject='MMO') }}" class="btn btn6" id="Elective"><span></span>MMO</a>
+        </td>
+    </tr>
+</table>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function (e){
+        $('.btn').on('mouseenter', function (e){
+            x = e.pagex -$(this).offset().left;
+            y = e.pagex -$(this).offset().top;
+            $(this).find('span').css({top:y,left:x})
+        })
+        $('.btn').on('mouseout', function (e){
+            x = e.pagex -$(this).offset().left;
+            y = e.pagex -$(this).offset().top;
+            $(this).find('span').css({top:y,left:x})
+        })
+    })
+</script>
 
 <style>
 h1 {

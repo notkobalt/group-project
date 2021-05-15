@@ -1,12 +1,26 @@
 import requests
 from flask import request
+import json
 
-searchurl = "https://api.rawg.io/api/games?key=8303ff9c44c54030a13e5ea703d768f8&search="
+searchurl = "https://api.rawg.io/api/games?key=91edf65dde2d49c7a6519987ed7c1769&search=silent-hill"
+titleslist = []
+
+searchresponse = requests.request("GET", searchurl)
+
+searchdump = searchresponse.json()
+searchresults = searchdump['results']
+displaylinks = ''
+
+for item in searchresults:
+    titleslist.append(item['name'])
+
+for index in titleslist:
+    displaylinks = displaylinks +  "<a href=#>" + index + "</a></br> "
+
+print(displaylinks)
 
 
-response = requests.request("GET", "https://api.rawg.io/api/games?key=8303ff9c44c54030a13e5ea703d768f8&dates=2019-09-01")
 
-print(response.text)
 
 def search():
     if request.method == 'POST':
@@ -17,4 +31,4 @@ def search():
 
         searchresponse = requests.request("GET", searchlink)
 
-        return searchresponse
+        return searchresponse.text
