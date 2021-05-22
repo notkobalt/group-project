@@ -1,10 +1,25 @@
-
+{% extends "base.html" %}
+{% block pagecontent %}
 <!--POST form where the user will enter a game title to search -->
-<p>Please enter a game title to search through results and generate a random game.</p>
+<h1 style="font-family:tahoma; color: white; margin-left: 170px; margin-top: 50px">please enter a game title to search through results and generate a random game!</h1>
+
 <form id="gamesearch" action= "#" method="POST" >
-    <input name="search" id="search" type = "text">
-    <button>Go!</button>
+    <input style="margin-left: 800px; margin-top: 200px" name="search" id="search" type = "text">
+    <button style="margin-top: 150px">Go!</button>
 </form>
 
 {{displayMessage}} </br>
 {{displaylinks | safe }}
+
+{% endblock %}
+
+<style>
+  h1 {
+  text-align: center;
+  margin-top: 140px;
+  color: white;
+  font-size: 70px
+  }
+
+  }
+</style>
