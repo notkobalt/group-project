@@ -4,7 +4,7 @@ input_array = []
 
 i = 1
 while i < len(sys.argv):
-    input_array.append(int(sys.argv[i]))
+    input_array.append(sys.argv[i])
     i += 1
 
 

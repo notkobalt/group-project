@@ -19,6 +19,7 @@ app.register_blueprint(jacobbubblesort, url_prefix='/jacobbubblesort')
 app.register_blueprint(reviews_bp, url_prefix='/reviews')
 
 
+
 # app routes
 @app.route('/')
 def home() :
