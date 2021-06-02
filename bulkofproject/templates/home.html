@@ -4,8 +4,9 @@
 {% block pagecontent %}
 
 
-<h1 style="font-family:'Comic Sans MS'"><b>review a game here.</b></h1>
-<h3 style="font-family:'Comic Sans MS'"><b>start by selecting a category.</b></h3>
+<h1 style="font-family:'Comic Sans MS'"><b>Welcome to Our Game Reviewing Website!</b></h1>
+<h3 style="font-family:'Comic Sans MS'"><b>Here, you can look and rate your favorite games from 1-5 stars.</b></h3>
+<h3 style="font-family:'Comic Sans MS'"><b>Through our NavBar, feel free to browse through different game categories and you can also read the reviews that others may leave here.</b></h3>
 </script>
 
 <style>
@@ -21,18 +22,6 @@
         color: white;
     }
 
-    .button {
-        background-color: Transparent;
-        border: none;
-        background-color: Transparent;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
 
     .button1 {
         background-color: Transparent;
@@ -62,8 +51,6 @@
 
     }
 
-
-
     .btn:hover{
         color: #111;
     }
@@ -79,44 +66,11 @@
         z-index: -1;
     }
 
-    .btn1 span {background: #4bc970;}
-    .btn2 span {background: #51d7f5;}
-    .btn3 span {background: #ebd026;}
-    .btn4 span {background: #fc4747;}
-    .btn5 span {background: #518050;}
-    .btn6 span {background: #865be3;}
-    .btn7 span {background: #6ae6cd;}
-
-
-
-
-    .btn:hover span{
-        width: 750px;
-        height: 750px;
     }
 
 </style>
 </head>
 
-<body>
-
-<table align="center">
-    <tr>
-        <td>
-            <a href="{{ url_for('search', subject='Action') }}" class="btn btn1" id="Action"><span></span>Action</a>
-            <a href="{{ url_for('search', subject='Adventure') }}" class="btn btn2" id="English"><span></span>Adventure</a>
-            <a href="{{ url_for('search', subject='RPG') }}" class="btn btn3" id="Language"><span></span>RPG</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="{{ url_for('search', subject='Sim') }}" class="btn btn4" id="History"><span></span>Simulation</a>
-            <a href="{{ url_for('search', subject='Strategy') }}" class="btn btn5" id="Science"><span></span>Strategy</a>
-            <a href="{{ url_for('search', subject='MMO') }}" class="btn btn6" id="Elective"><span></span>MMO</a>
-        </td>
-    </tr>
-</table>
-</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function (e){
@@ -148,8 +102,5 @@ h3 {
 }
 </style>
 
-
-
 {% endblock %}
 </html>
-
