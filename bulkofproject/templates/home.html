@@ -3,17 +3,10 @@
 {% extends "base.html" %}
 {% block pagecontent %}
 
-<div class="row justify-content-center" style="text-align: center;">
-    <button class="button button2" onclick="window.location.href='/'"><img src="{{url_for('static', filename='logo.png')}}" style="width:150px;height:150px;">
-    </button>
-</div>
 
-<h1 style="font-family:'Comic Sans MS'"><b>Welcome to Our Game Reviewing Website!</b></h1>
-<h3 style="font-family:'Comic Sans MS'"><b>Here, you can look and rate your favorite games from 1-5 stars.</b></h3>
-<h3 style="font-family:'Comic Sans MS'"><b>Through our NavBar, feel free to browse through different game categories and you can also read the reviews that others may leave here.</b></h3>
+<h1 style="font-family:tahoma"><b>review a game here.</b></h1>
+<h3 style="font-family:tahoma"><b>start by searching for a game.</b></h3>
 </script>
-
-
 
 <style>
     h1{
@@ -28,11 +21,23 @@
         color: white;
     }
 
+    .button {
+        background-color: Transparent;
+        border: none;
+        background-color: Transparent;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 
     .button1 {
         background-color: Transparent;
         background-color: Transparent;
-        border: 0px solid #4CAF50;
+        border: 0px solid #FFFFFF;
     }
     body{
         background-color: #243447;
@@ -40,8 +45,8 @@
 
     .btn{
         position: relative;
-        height:150px;
-        border: 2px solid #41f321;
+        height:100px;
+        border: 4px solid #FFFFFF;
         margin: 10px;
         display: inline-block;
         text-decoration: #41f321;
@@ -51,11 +56,13 @@
         overflow: hidden;
         font-size: 24px;
         color: white;
-        width: 15em;
+        width: 11em;
         text-align: center;
-        line-height: 100px;
+        line-height: 80px;
 
     }
+
+
 
     .btn:hover{
         color: #111;
@@ -72,11 +79,30 @@
         z-index: -1;
     }
 
+
+
+
+
+    .btn:hover span{
+        width: 750px;
+        height: 750px;
     }
 
 </style>
 </head>
 
+<body>
+
+    </div>
+
+<table align="center">
+    <tr>
+        <td>
+            <a href="{{ url_for('search', subject='browse') }}" class="btn btn2" id="English"><span></span>search here</a>
+        </td>
+    </tr>
+</table>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function (e){
@@ -108,5 +134,8 @@ h3 {
 }
 </style>
 
+
+
 {% endblock %}
 </html>
+
