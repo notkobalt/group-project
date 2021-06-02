@@ -1,19 +1,16 @@
 # Project Plan
 
-Idea: Game Review
+Hello! We are the group, and our website goal is to make an easily accessable way to both review games and look at overviews of games to find ones to your liking. 
+We also want to include a login system to show user's reviews and details, potentially interests.
 - https://docs.google.com/document/d/1EFlapSLtudKA0r42AZ46T57u7ksnPDTYismk6XoxVEc/edit?usp=sharing
 - Runtime link: http://76.176.48.196:5671/
-
-Concept: Website for finding and reviewing games
-Crossover group: p4-fishes (We pull from game api and then make our own with rating system, other group has not decided yet on their project.)
+- Crossover group: p4-fishes
 
 # Features:
-- 5 star based rating system for games (stretch goal is write a summary of likes/dislikes to display along with the stars)
-- Filter data based on stars
-- Login?
-- REST API for list of games
-- Random game recommendation function
-- https://www.igdb.com/api
+- 5 star based rating system for games, along with a written summary for the rating
+- REST API used for searching game titles for a wide database of games to review
+- User accounts that display their reviews
+- Easy way to filter games based on genre
 
 # Mini Lab 4/2
 Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60df651c50d49b3769<br>
