@@ -4,8 +4,8 @@
 {% block pagecontent %}
 
 
-<h1 style="font-family:'Comic Sans MS'"><b>review a game here.</b></h1>
-<h3 style="font-family:'Comic Sans MS'"><b>start by selecting a category.</b></h3>
+<h1 style="font-family:tahoma"><b>review a game here.</b></h1>
+<h3 style="font-family:tahoma"><b>start by selecting a category.</b></h3>
 </script>
 
 <style>
@@ -98,6 +98,27 @@
 </style>
 </head>
 
+<body>
+
+    </div>
+
+<table align="center">
+    <tr>
+        <td>
+            <a href="{{ url_for('search', subject='Action') }}" class="btn btn1" id="Action"><span></span>Action</a>
+            <a href="{{ url_for('search', subject='Adventure') }}" class="btn btn2" id="English"><span></span>Adventure</a>
+            <a href="{{ url_for('search', subject='RPG') }}" class="btn btn3" id="Language"><span></span>RPG</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="{{ url_for('search', subject='Sim') }}" class="btn btn4" id="History"><span></span>Simulation</a>
+            <a href="{{ url_for('search', subject='Strategy') }}" class="btn btn5" id="Science"><span></span>Strategy</a>
+            <a href="{{ url_for('search', subject='MMO') }}" class="btn btn6" id="Elective"><span></span>MMO</a>
+        </td>
+    </tr>
+</table>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function (e){
