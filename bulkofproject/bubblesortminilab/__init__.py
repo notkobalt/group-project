@@ -56,3 +56,9 @@ def kira():
         return render_template(("bubblesortminilab/kira.html"), calculation = calculation, original = request.form.get("series"))
     return render_template(("bubblesortminilab/kira.html"), calculation = Sort([4, 27, 0, 9]), original = "")
 
+@bubblesortminilab.route('/roop', methods = ['GET', 'POST'])
+def roop():
+    if request.method =='POST':
+        calculation = Sort((json.loads("[" + request.form.get("numbers") + "]")))
+        return render_template(("bubblesortminilab/roop.html"), calculation = calculation, original = request.form.get("numbers"))
+    return render_template(("bubblesortminilab/roop.html"), calculation = Sort([4, 27, 0, 9]), original = "")
