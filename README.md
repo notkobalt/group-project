@@ -1,4 +1,4 @@
-# Project Plan
+## Our Website
 
 Hello! We are the group, and our website goal is to make an easily accessable way to both review games and look at overviews of games to find ones to your liking. 
 We also want to include a login system to show user's reviews and details.
@@ -12,6 +12,7 @@ We also want to include a login system to show user's reviews and details.
 - User accounts that display their reviews
 - Easy way to filter games based on genre
 
+## Progress
 # Blueprints
 - Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
   - ex: Game review code is in the "reviews" blueprint
@@ -23,12 +24,17 @@ We also want to include a login system to show user's reviews and details.
 - One databse stores user reviews, connected to login database through "user_id" column and ForeignKey function
 - Rating database has "game" column to store which game the rating is attached to (makes displaying proper review on proper game pages easier)
 
+# API
+- Using the RAWG game API to retrieve and search game titles https://rawg.io/apidocs
+- API also includes small summaries and screenshots which will be used in individual game pages
+- Aids in sorting by genre
+
 # Routing
 - One single route in a for loop creates a route for every game in the database
 - Single html file made completely with jinja allows for a smaller file size and prevents the creation of thousands of html files to accomodate for the api
 - Routing and API query code in a "Blueprint" in order to keep project organized
 
-# Progress 6/1
+# Update 6/1
 - A search system has been created using the API, along with a random game reccomendation function
 - Front page, navbar, login page have finished CSS
 - Website is deployed and accessable
