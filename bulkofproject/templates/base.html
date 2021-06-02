@@ -20,30 +20,33 @@
 
 <!-- Nav bar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-    <a class="navbar-brand" href="#">game reviews</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
         <ul class="navbar-nav mr-auto">
-
+            <li class="nav-item">
+                <a class="navbar-left" href="/"><img src="{{url_for('static', filename='logo.png')}}" style="width:50px;height:50px;"></a>
+            </li>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="/"> home </a>
+                <a class="nav-link" href="/"> Home </a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="/rating"> rating </a>
+                <a class="nav-link" href="/rating"> Rating </a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="/reviews"> reviews </a>
+                <a class="nav-link" href="/reviews"> Reviews </a>
             </li>
                        <li class="nav-link">
-                <a class="nav-link" href="/login"> login </a>
+                <a class="nav-link" href="/login"> Login </a>
             </li>
             <li class="nav-link">
-                <a class="nav-link" href="/registration"> register </a>
+                <a class="nav-link" href="/registration"> Register </a>
             </li>
             <li class="nav-link dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -99,10 +102,10 @@ body {
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: cover;
-   font-family: verdana;
+   font-family: "Comic Sans MS";
 }
 head {
-   font-family: verdana;
+   font-family: "Comic Sans MS";
    }
 </style>
 
