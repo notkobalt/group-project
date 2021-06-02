@@ -34,6 +34,9 @@ We also want to include a login system to show user's reviews and details.
 - Single html file made completely with jinja allows for a smaller file size and prevents the creation of thousands of html files to accomodate for the api
 - Routing and API query code in a "Blueprint" in order to keep project organized
 
+### Rating Systen
+- WIP
+
 # Update 6/1
 - A search system has been created using the API, along with a random game reccomendation function
 - Front page, navbar, login page have finished CSS
