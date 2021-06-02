@@ -1,7 +1,7 @@
 # Project Plan
 
 Hello! We are the group, and our website goal is to make an easily accessable way to both review games and look at overviews of games to find ones to your liking. 
-We also want to include a login system to show user's reviews and details, potentially interests.
+We also want to include a login system to show user's reviews and details.
 - https://docs.google.com/document/d/1EFlapSLtudKA0r42AZ46T57u7ksnPDTYismk6XoxVEc/edit?usp=sharing
 - Runtime link: http://76.176.48.196:5671/
 - Crossover group: p4-fishes
@@ -11,6 +11,13 @@ We also want to include a login system to show user's reviews and details, poten
 - REST API used for searching game titles for a wide database of games to review
 - User accounts that display their reviews
 - Easy way to filter games based on genre
+
+# Progress 6/1
+- A search system has been created using the API, along with a random game reccomendation function
+- Front page, navbar, login page have finished CSS
+- Website is deployed and accessable
+- Rating system and the link from search result to review page is in development
+- Login system is complete, user pages are in development
 
 # Mini Lab 4/2
 Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60df651c50d49b3769<br>
@@ -42,7 +49,7 @@ Lucas: <br>
 5. [Missed a point here as well, no wow]<br>
 
 # Mini Lab Revision 4/6
-Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
+Kira: https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a <br>
 1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
 2. I created a class called "Calc" which handles calculations.<br>
 3. Objects are created when testing numbers with the calculations<br>
