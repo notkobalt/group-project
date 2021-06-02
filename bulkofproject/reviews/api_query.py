@@ -5,7 +5,8 @@ import json
 def gamequery():
     #empty list
     games = []
-    page = 27983
+    #page = 27983
+    page = 2
     #repeat for every page
     for i in range(1,page):
         #call api as a list
