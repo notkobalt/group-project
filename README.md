@@ -1,60 +1,47 @@
-# Project Plan
+# Our Website
 
-Idea: Game Review
+Hello! We are the group, and our website goal is to make an easily accessable way to both review games and look at overviews of games to find ones to your liking. 
+We also want to include a login system to show user's reviews and details.
 - https://docs.google.com/document/d/1EFlapSLtudKA0r42AZ46T57u7ksnPDTYismk6XoxVEc/edit?usp=sharing
 - Runtime link: http://76.176.48.196:5671/
+- Crossover group: p4-fishes
 
-Concept: Website for finding and reviewing games
-Crossover group: p4-fishes (We pull from game api and then make our own with rating system, other group has not decided yet on their project.)
+### Features:
+- 5 star based rating system for games, along with a written summary for the rating
+- REST API used for searching game titles for a wide database of games to review
+- User accounts that display their reviews
+- Easy way to filter games based on genre
 
-# Features:
-- 5 star based rating system for games (stretch goal is write a summary of likes/dislikes to display along with the stars)
-- Filter data based on stars
-- Login?
-- REST API for list of games
-- Random game recommendation function
-- https://www.igdb.com/api
+# Progress
+### Blueprints
+- Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
+  - ex: Game review code is in the "reviews" blueprint
+- Mini-labs will each be in their seperate blueprints
+- Splitting our project into blueprints corresponding to each group memeber would be inefficient for our project, it stops any chance for teamwork when coding our project. We have multiple tickets where group members work together, having individual folders for each group member's code would lead to one group member not recieving credit for their work, or duplicate dead code.
 
-# Mini Lab 4/2
-Kira: https://github.com/notkobalt/group-project/commit/d50d806232d38a7a5c0c0c60df651c50d49b3769<br>
-1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
-2. I created a class called "Calc" which handles calculations.<br>
-3. Objects are created when testing numbers with the calculations<br>
-4. Values are returned and are able to be displayed on the website<br>
-5. [I Miss a point on this, I was unable to figure out why I can't input numbers similarly to the fibonacci website]<br>
+### Login
+- One database stores usernames and passwords for login system
+- One databse stores user reviews, connected to login database through "user_id" column and ForeignKey function
+- Rating database has "game" column to store which game the rating is attached to (makes displaying proper review on proper game pages easier)
 
-Dylan:https://github.com/notkobalt/group-project/blob/main/bulkofproject/classesminilab/dylanlab.py <br>
-1: "classesminilab" blueprint contains .py file with mini-lab code <br>
-2: class "equations" exists <br>
-3: list, dict, dictid, function objects created <br>
-4: getters used to pull data from class, [missed point because it does not print the output] <br>
-5: [missed point because wow is not highlighted] <br>
+### API
+- Using the RAWG game API to retrieve and search game titles https://rawg.io/apidocs
+- API also includes small summaries and screenshots which will be used in individual game pages
+- Aids in sorting by genre
 
-Jacob: https://github.com/notkobalt/group-project/blob/e0873bb396498b340c757a025a9f598a94d09f32/bulkofproject/classesminilab/jacoblab.py <br>
-1: Code for mini-lab located in jacoblab.py file (contains the class) <br>
-2: Defines "Characters" class containing characters from shows or video games. <br>
-3: Creates the object from the class "Characters" when displayed. <br>
-4: Uses the getters "series, list, dictid and dict"; however I miss a point due to error in print. <br>
-5: I failed to try to adding this class on the web and displaying it correctly; missed point. <br>
+### Routing
+- One single route in a for loop creates a route for every game in the database
+- Single html file made completely with jinja allows for a smaller file size and prevents the creation of thousands of html files to accomodate for the api
+- Routing and API query code in a "Blueprint" in order to keep project organized
 
-Lucas: <br>
-1: lucaslabnew.py and lucas.html has my relevant lab code<br>
-2. created a class titled 'equations'<br>
-3. any time you enter a number, objects are made<br>
-4. [Missed a point here. Html file is broken]<br>
-5. [Missed a point here as well, no wow]<br>
+### Rating Systen
+- WIP
 
-# Mini Lab Revision 4/6
-Kira:https://github.com/notkobalt/group-project/commit/b8377f422c62f06e0277c49f8a13f778000ba27a
-1: All material for my lab is located in "kiralab.py" and "kira.html"<br>
-2. I created a class called "Calc" which handles calculations.<br>
-3. Objects are created when testing numbers with the calculations<br>
-4. Values are returned and are able to be displayed on the website<br>
-5. I fixed POST/GET functions so that the page updates when the user inputs a number, creating a new string of numbers <br>
+# Update 6/1
+- A search system has been created using the API, along with a random game reccomendation function
+- Front page, navbar, login page have finished CSS
+- Website is deployed and accessable
+- Rating system and the link from search result to review page is in development
+- Login system is complete, user pages are in development
 
-Jacob: https://github.com/notkobalt/group-project/commit/64d9192d4b5f992e6aa1445390b6fb024f5c8e6d <br>
-1: Material and code still located in jacoblab.py and jacob.html (both found in jacobminilab directory. +1 <br>
-2: Created class "Characters" that have some characters from shows/video games. +1 <br>
-3: Objects created from the Class in Python. +1 <br>
-4: Used the getters and fixed the printing issue on the website to make it display properly. +1 <br>
-5: Corrected my init blueprint and organized it to make it so random characters are shown according to how many characters the user wants to display up to 10. <br>
+
