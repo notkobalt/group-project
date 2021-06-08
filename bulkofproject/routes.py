@@ -51,7 +51,11 @@ def search():
         #format for HTML
         displaylinks = ""
         for x, y in titlesdictionary.items():
-            displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
+            if y == None:
+                displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.tlDKZhACEaIkaATgSSsXygAAAA%26pid%3DApi&f=1'><div class='title'>" + x + "</div></div></a>"
+            else:
+                displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
+        print(displaylinks)
 
         return render_template(('search.html'), displaylinks = displaylinks, displayMessage = randomGame(titleslist))
     return render_template('search.html')
