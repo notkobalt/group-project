@@ -57,3 +57,11 @@ def login() :
 @app.route('/signup')
 def signup() :
     return render_template('signup.html')
+
+@app.route('/easter')
+def easter() :
+    return render_template('easteregg.html')
+
+@app.route('/profile')
+def profile() :
+    return render_template('profile.html')
