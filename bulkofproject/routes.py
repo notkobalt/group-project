@@ -9,14 +9,13 @@ from bulkofproject.classesminilab import classesminilab
 from bulkofproject.bubblesortminilab import bubblesortminilab
 from bulkofproject.classesminilab.jacobminilab import jacobblueprint
 from bulkofproject.classesminilab.jacobbubblelab import jacobbubblesort
-from bulkofproject.reviews import reviews_bp
+from bulkofproject.gameapi import randomGame
 
 # register blueprints
 app.register_blueprint(classesminilab, url_prefix='/classes')
 app.register_blueprint(bubblesortminilab, url_prefix='/bubble_sort')
 app.register_blueprint(jacobblueprint, url_prefix='/jacobblueprint')
 app.register_blueprint(jacobbubblesort, url_prefix='/jacobbubblesort')
-app.register_blueprint(reviews_bp, url_prefix='/reviews')
 
 
 
@@ -29,25 +28,32 @@ def home() :
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     if request.method == 'POST':
-        #request
-        titleslist = []
-        displaylinks = ''
+        titlesdictionary = {}
+        titleslist =[]
         searchurl = "https://api.rawg.io/api/games?key=91edf65dde2d49c7a6519987ed7c1769&search="
+
+        #get entry from POST form
         searchentry = request.form['search']
         searchlink = searchurl + searchentry
 
+        #send request to RAWG API game database
         searchresponse = requests.request("GET", searchlink)
         searchdump = searchresponse.json()
         searchresults = searchdump['results']
 
-        #for display on front end
         for item in searchresults:
             titleslist.append(item['name'])
 
-        for index in titleslist:
-            displaylinks = displaylinks +  "<a href=#>" + index + "</a></br> "
+        #append all titles to a dictionary
+        for item in searchresults:
+            titlesdictionary[item['name']] = item['background_image']
 
-        return render_template(('search.html'), displaylinks = displaylinks)
+        #format for HTML
+        displaylinks = ""
+        for x, y in titlesdictionary.items():
+            displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
+
+        return render_template(('search.html'), displaylinks = displaylinks, displayMessage = randomGame(titleslist))
     return render_template('search.html')
 
 @app.route('/login')

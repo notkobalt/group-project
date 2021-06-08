@@ -11,13 +11,47 @@
   font-family:tahoma;
   }
 
+ .results{
+
+ }
+
 .content {
   max-width: 1000px;
   margin: auto;
   vertical-align: middle;
+  }
 
+  .container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 280px;
+  height: 280px;
+  margin: 2%;
+  float: left;
 }
 
+.icon {
+  border-radius: 5%;
+  filter: brightness(50%);
+  width: 280px;
+  height: 280px;
+  transition: all .2s ease-in-out;
+}
+
+.container:hover .icon {
+  filter: brightness(60%);
+  transform: scale(.95);
+}
+
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: brightness(100%);
+}
 </style>
 </head>
 
@@ -31,9 +65,11 @@
     <button style = "margin-top: 50px">Go!</button>
 </form>
 
+    <div class ='results'>
 {{displayMessage}} </br>
 {{displaylinks | safe }}
 
+    </div>
 </div>
 
 </body>
