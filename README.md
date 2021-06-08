@@ -12,7 +12,7 @@ We also want to include a login system to show user's reviews and details.
 - User accounts that display their reviews
 - Easy way to filter games based on genre
 
-# Progress
+# Progress 6/8
 ### Blueprints
 - Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
   - ex: Game review code is in the "reviews" blueprint
@@ -26,8 +26,8 @@ We also want to include a login system to show user's reviews and details.
 
 ### API
 - Using the RAWG game API to retrieve and search game titles https://rawg.io/apidocs
-- API also includes small summaries and screenshots which will be used in individual game pages
-- Aids in sorting by genre
+- Search system is completed, corresponding games returned from search query
+- Games are displayed with clickable icons of screenshots
 
 ### Routing
 - One single route in a for loop creates a route for every game in the database
