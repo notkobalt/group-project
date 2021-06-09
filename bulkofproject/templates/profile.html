@@ -4,30 +4,27 @@
 {% block pagecontent %}
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Profile</title>
 </head>
 
 <body>
 
 <div class="banner">
     <div class="container">
-        <h1 style="font-family:tahoma"><b>⠀login here.</b></h1>
+        <h1 style="font-family:tahoma; padding-right: 5px;"><b>Your Profile</b></h1>
+        <p style="font-family:tahoma; font-size: 30px; color:white; padding-left: 5px;"><b>username</b></p>
+        <p>⠀</p>
         <form method="POST" ID="formName" action=# class="form2">
             <p>
-                <label for="username" class="floatLabel"></label>
-                <input id="username" name="username" placeholder="username" type="text" required="required">
-            </p>
-            <p>
-                <label for="password"  class="floatLabel"></label>
-                <input id="password" name="password" placeholder="password" type="password" required="required">
-            </p>
-            <p> <p> ⠀⠀⠀⠀⠀⠀⠀⠀don't have an account? <a href="/signup" style="color: white">sign up</a></p>
-            <p>
 
-                <input type="submit" class="button button-primary" value="login">
+                <input type="submit" class="button button-primary" value="my posted reviews">
+                <br>
+                <input type="submit" class="button button-primary" value="delete my account">
+                <br>
+                <input type="submit" class="button button-primary" value="account settings">
             </p>
         </form>
-
+        <p> <p>⠀⠀not your account? <a href="/signup" style="color: white">sign out</a></p>
     </div>
 </div>
 </body>
@@ -40,7 +37,7 @@
 
         .container{
             padding-top: 125px;
-            padding-left: 300px;
+            padding-left: 60px;
             width:90vw;
             height: 90vh;
             margin: auto;
@@ -60,7 +57,7 @@
         .login{
             text-align: center;
             vertical-align: middle;
-            width: 50vw; height: 50vh;
+            width: 25vw; height: 50vh;
             color: black; font-size: 2rem;
 
         }
@@ -89,13 +86,13 @@
         {
             padding: 19px 39px 18px 39px;
             color: #FFF;
-            background-color: #4bc970;
-            font-size: 18px;
+            background-color: #a742f5;
+            font-size: 20px;
             text-align: center;
             font-style: normal;
-            width: 50%;
-            border-radius: 40px;
-            border: 1px solid #3ac162;
+            width: 25%;
+            border-radius: 30px;
+            border: 1px solid #7119b5;
             border-width: 1px 1px 3px;
             box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
             margin-bottom: 10px;
