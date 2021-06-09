@@ -62,9 +62,13 @@
                 <a class="nav-link" href="/search">search</a>
             </li>
         </ul>
-        <div>
 
-        </div>
+        <!-- navbar aligned right-->
+        {% if insession == True %}
+        <li class="nav-link">
+            <a href = "#">{{ user }}</a>
+        </li>
+        {% endif %}
     </div>
     <!-- log in button in navbar-->
     <!--</div>

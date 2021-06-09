@@ -3,16 +3,16 @@ from flask import Blueprint, render_template, __name__, request
 
 reviews_bp = Blueprint('reviews', __name__)
 
-#game = game
-game = 'test'
-@reviews_bp.route('/<link>')
-#parameters in "reviews" make the link adaptable, will have a for loop once query system is set up changein the 'test' text to the corresponding games (2 week ticket difficult to convey in 1 ticket a week system)
+@reviews_bp.route('/write')
+def write():
+    if request.method == 'POST':
+        return render_template('reviews/write.html')
+    else:
+        return render_template('reviews/write.html')
 
-#for game in gamelist:
-def reviews(link = game):
-
-    return render_template('reviews/reviews.html', #game = test
-    )
-
-
-
+@reviews_bp.route('/')
+def review():
+    if request.method == 'POST':
+        return render_template('reviews/review.html')
+    else:
+        return render_template('reviews/review.html')

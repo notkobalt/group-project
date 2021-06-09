@@ -5,7 +5,7 @@ from datetime import datetime
 
 #database tables (models)
 ##login db
-class users(db.Model):
+class User(db.Model):
     #table columns
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(15), unique = True, nullable = False)
