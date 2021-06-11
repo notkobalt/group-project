@@ -15,9 +15,9 @@
         var color;
         var num;
         var count;
-        var list= '{{ teacherList }}'
+        var list= '{{ gamelist }}'
         list = list.replaceAll("&#34;", "\"")
-        teacherList = JSON.parse(list)
+        gamelist = JSON.parse(list)
 
         $(document).ready(function() {
             //Prepare Element selectors
@@ -54,8 +54,8 @@
         function addItem(container, template, count) {
             color = COLORS[_.random(COLORS.length - 1)];
             num = _.random(10000);
-            name = teacherList[count][1]
-            id = teacherList[count][0]
+            name = gamelist[count][1]
+            id = gamelist[count][0]
 
             container.append(Mustache.render(template, {
                 color,
@@ -69,7 +69,7 @@
             const tmpl = $('#item_template').html()
             const container = $('#app');
 
-            for (let i = 0; i < teacherList.length ; i++) {
+            for (let i = 0; i < gamelist.length ; i++) {
                 addItem(container, tmpl,i);
 
             }
@@ -92,16 +92,8 @@
                 $(this).parent().addClass('checked');
             });
 
-            $('input:radio').change(
-                function(){
-                    var userRating = this.value;
-                    id= $(this).attr('name');
-                    teacherId = id.substr(id.indexOf("[")+1, id.indexOf("]")-id.indexOf("[")-1);
-                    teacherName = $(this).parents().closest('.item').find('.teacherName').text();
-                    alert(userRating + " star for Teacher id = " + teacherId + " teacher name = " + teacherName);
-
                     let request = new XMLHttpRequest();
-                    request.open("POST", "/submitRating?teacherId=" + teacherId +"&rating=" + userRating+"&teacherName=" + teacherName);
+                    request.open("POST", "/submitRating?gameId=" + gameId +"&rating=" + userRating+"&gameName=" + gameName);
                     request.send();
 
                     $(this).parents().closest('.item').find('.result').innerText = result;

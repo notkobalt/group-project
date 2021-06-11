@@ -119,3 +119,20 @@ def signup() :
             db.session.commit()
         return render_template('signup.html')
     else: return render_template('signup.html')
+
+@app.route('/rating2')
+def rating2() :
+     return render_template('rating2.html')
+
+@app.route('/rating')
+def rating():
+    return render_template("rating.html")
+
+@app.route('/star')
+def star():
+    return render_template("star.html")
+    #rating requests
+    username = request.form['username']
+    rating = request.form['rating']
+    game = request.form['gamename']
+    commit = user(username = username, game = gamename, rating = rating)
