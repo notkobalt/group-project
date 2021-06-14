@@ -2,7 +2,6 @@
 from flask import Blueprint, render_template, __name__, request, session, redirect, url_for, flash
 #other imports
 import requests
-import json
 from bulkofproject.models import db, rating
 from bulkofproject.reviews.query import query
 reviews_bp = Blueprint('reviews', __name__)

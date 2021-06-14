@@ -1,10 +1,10 @@
 #imports
 ##import website components
-from flask import render_template, request, session, redirect, url_for
+from flask import render_template, request, session, redirect, url_for, jsonify, flash
 ##import config from __init__
 from bulkofproject import app, db
 #import models
-from bulkofproject.models import User
+from bulkofproject.models import User, rating
 ##import blueprints
 from bulkofproject.classesminilab import classesminilab
 from bulkofproject.bubblesortminilab import bubblesortminilab
@@ -96,20 +96,13 @@ def logout():
     else:
         return redirect(url_for('home'))
 
-#to be deleted
-@app.route('/rating2')
-def rating2() :
-     return render_template('rating2.html')
+@app.route('/api')
+def websiteapi():
+    reviewsquery = rating.query.all()
+    reviewslist = []
 
-@app.route('/rating')
-def rating():
-    return render_template("rating.html")
+    for review in reviewsquery:
+        reviewslist.append({'game':review.game, 'stars':review.stars, 'review':review.review, 'user':review.user})
 
-@app.route('/star')
-def star():
-    return render_template("star.html")
-    #rating requests
-    username = request.form['username']
-    rating = request.form['rating']
-    game = request.form['gamename']
-    commit = user(username = username, game = gamename, rating = rating)
+    gamejson = jsonify({'reviewslist':reviewslist})
+    return gamejson
