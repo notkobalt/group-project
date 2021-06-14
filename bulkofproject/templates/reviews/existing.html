@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block pagecontent %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Existing Reviews</title>
+</head>
+
+<body>
+{% for entry in display %}
+    <div>
+        <p>Game: {{ entry['game'] }}</p>
+        <p>User: {{ entry['user_review'] }}</p>
+        <p>Stars: {{ entry['stars'] }}</p>
+        <p>User Review: {{ entry['review'] }}</p>
+    </div>
+{% endfor %}
+</body>
+
+<style>
+
+</style>
+{% endblock %}
+</html>

@@ -10,8 +10,6 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(15), unique = True, nullable = False)
     password = db.Column(db.String(), nullable = False)
-    #link to rating db
-    ratings = db.relationship('rating', backref = 'author', lazy = True)
 
     #callable attributes
     def __repr__(self):
@@ -21,10 +19,10 @@ class User(db.Model):
 class rating(db.Model):
     #table columns
     id = db.Column(db.Integer, primary_key = True)
+    game = db.Column(db.Text, nullable = False)
     stars = db.Column(db.Integer, nullable = False)
     review = db.Column(db.Text, nullable = False)
-    #link to users db
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
+    user = db.Column(db.Text, nullable = False)
 
     def __repr__(self):
-        return f"user('{self.stars}', '{self.review}')"
+        return f"user('{self.game}', {self.stars}', '{self.review}', '{self.user}')"

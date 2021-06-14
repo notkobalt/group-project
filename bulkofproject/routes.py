@@ -1,8 +1,7 @@
 #imports
-##import flask components
-from flask import render_template, request, session, redirect, url_for, flash
+##import website components
+from flask import render_template, request, session, redirect, url_for
 ##import config from __init__
-import requests, json
 from bulkofproject import app, db
 #import models
 from bulkofproject.models import User
@@ -28,41 +27,9 @@ def home() :
     #in session (logged in)
     if 'user' in session:
         user = session['user']
-        return render_template('home.html', user = user, insession = True)
+        return render_template('home.html', user = user)
     #not in session (logged out)
     return render_template('home.html')
-
-
-@app.route('/search', methods = ['GET', 'POST'])
-def search():
-    if 'user' in session:
-        user = session['user']
-        if request.method == 'POST':
-            #request
-            titleslist = []
-            displaylinks = ''
-            searchurl = "https://api.rawg.io/api/games?key=91edf65dde2d49c7a6519987ed7c1769&search="
-            searchentry = request.form['search']
-            searchlink = searchurl + searchentry
-
-            searchresponse = requests.request("GET", searchlink)
-            searchdump = searchresponse.json()
-            searchresults = searchdump['results']
-
-            #for display on front end
-            for item in searchresults:
-                titleslist.append(item['name'])
-
-            for index in titleslist:
-                displaylinks = displaylinks +  "<a href=#>" + index + "</a></br> "
-
-            return render_template(('search.html'), displaylinks = displaylinks, user = user)
-        return render_template(('search.html'), user = user)
-
-    else:
-        #flash("Please Log in to Access Function")
-        redirect(url_for(home))
-        return render_template('search.html')
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login() :
@@ -85,7 +52,7 @@ def login() :
             if user and user.password == password:
                 #enter user into session
                 session['user'] = user.username
-                return redirect(url_for(''))
+                return redirect(url_for('home'))
             #no match
             else:
                 #flash("Incorrect Username or Password")
@@ -118,8 +85,18 @@ def signup() :
             db.session.add(commit)
             db.session.commit()
         return render_template('signup.html')
-    else: return render_template('signup.html')
+    else:
+        return render_template('signup.html')
 
+@app.route('/logout')
+def logout():
+    if 'user' in session:
+        session.pop('user', None)
+        return redirect(url_for('home'))
+    else:
+        return redirect(url_for('home'))
+
+#to be deleted
 @app.route('/rating2')
 def rating2() :
      return render_template('rating2.html')

@@ -92,21 +92,14 @@
 </head>
 
 <body>
-
-    </div>
-
-<table align="center">
-    <tr>
-        <td>
-            <a href="{{ url_for('search', subject='browse') }}" class="btn btn2" id="English"><span></span>search here</a>
-        </td>
-    </tr>
-</table>
+<div class="row justify-content-center" style="text-align: center;">
+    <button class="button button2" onclick="window.location.href='/'"><img src="{{url_for('static', filename='logo.png')}}" style="width:150px;height:150px;">
+    </button>
 </div>
-    <div class="row justify-content-center" style="text-align: center;">
-        <button class="button button2" onclick="window.location.href='/'"><img src="{{url_for('static', filename='logo.png')}}" style="width:150px;height:150px;">
-        </button>
-    </div>
+</body>
+
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function (e){
@@ -122,7 +115,6 @@
         })
     })
 </script>
-
 <style>
 h1 {
     text-align: center;

@@ -60,16 +60,22 @@
                     <a class="dropdown-item" href="#">mmo</a>
                 </div>
             </li>
+
             <li class="nav-link">
-                <a class="nav-link" href="/search">search</a>
+                <a class="nav-link" href="/reviews/search">search</a>
             </li>
+
         </ul>
 
-        <!-- navbar aligned right-->
-        {% if insession == True %}
-        <li class="nav-link">
-            <a href = "#">{{ user }}</a>
-        </li>
+        {% if 'user' in session %}
+        <ul class="navbar navbar-right navbar-nav">
+            <li class="nav-link">
+                <a href="#">{{ user }}</a>
+            </li>
+            <li class="nav-link">
+                <a href="/logout">logout</a>
+            </li>
+        </ul>
         {% endif %}
     </div>
     <!-- log in button in navbar-->
