@@ -96,13 +96,10 @@ def logout():
     else:
         return redirect(url_for('home'))
 
-@app.route('/api')
-def websiteapi():
-    reviewsquery = rating.query.all()
-    reviewslist = []
+@app.route('/easter')
+def easter() :
+    return render_template('easteregg.html')
 
-    for review in reviewsquery:
-        reviewslist.append({'game':review.game, 'stars':review.stars, 'review':review.review, 'user':review.user})
-
-    gamejson = jsonify({'reviewslist':reviewslist})
-    return gamejson
+@app.route('/profile')
+def profile() :
+    return render_template('profile.html')
