@@ -39,28 +39,6 @@
             <li class="nav-link">
                 <a class="nav-link" href="/reviews"> reviews </a>
             </li>
-                       <li class="nav-link">
-                <a class="nav-link" href="/login"> login </a>
-            </li>
-            <li class="nav-link">
-                <a class="nav-link" href="/signup"> signup </a>
-            <li class="nav-link">
-                <a class="nav-link" href="/profile"> profile </a>
-            </li>
-            <li class="nav-link dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    search by category
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">action</a>
-                    <a class="dropdown-item" href="#">adventure</a>
-                    <a class="dropdown-item" href="#">rpg</a>
-                    <a class="dropdown-item" href="#">simulation</a>
-                    <a class="dropdown-item" href="#">strategy</a>
-                    <a class="dropdown-item" href="#">mmo</a>
-                </div>
-            </li>
-
             <li class="nav-link">
                 <a class="nav-link" href="/reviews/search">search</a>
             </li>
@@ -69,28 +47,36 @@
 
         {% if 'user' in session %}
         <ul class="navbar navbar-right navbar-nav">
-            <li class="nav-link">
-                <a href="#">{{ user }}</a>
+            <li>
+                <a href="/account/profile" class="nav-link">{{ user }}</a>
             </li>
-            <li class="nav-link">
-                <a href="/logout">logout</a>
+            <li>
+                <a href="/account/logout" class="nav-link">logout</a>
+            </li>
+        </ul>
+        {% else %}
+        <ul class="navbar navbar-right navbar-nav">
+            <!-- signup -->
+            <li>
+                <a href="/account/signup" class="nav-link">signup</a>
+            </li>
+            <!-- login -->
+            <li>
+                <a href="/account/login" class="nav-link">login</a>
             </li>
         </ul>
         {% endif %}
     </div>
-    <!-- log in button in navbar-->
-    <!--</div>
-    <a class="button" href="/login" role="button">Login</a>
-    <div>-->
-        <!-- alligns right-->
-    <!--   <ul class="nav navbar-nav navbar-right">
-           <li class="nav-item">
-               <a class="nav-link" href="/profile">View Profile</a>
-           </li>
-       </ul>
-   </div>-->
 
 </nav>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p id="message" class="lead">{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
 <style>
 
@@ -116,6 +102,12 @@ body {
 head {
    font-family: "verdana";
    }
+
+.lead{
+    font-family: "veranda";
+    color: white;
+    text-align:center;
+    }
 </style>
 
 {% block pagecontent %}

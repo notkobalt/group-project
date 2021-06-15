@@ -4,6 +4,8 @@ from flask import Blueprint, render_template, __name__, request, session, redire
 import requests
 from bulkofproject.models import db, rating
 from bulkofproject.reviews.query import query
+
+#create blueprint
 reviews_bp = Blueprint('reviews', __name__)
 
 #display reviews
@@ -49,7 +51,7 @@ def search():
         else: return render_template(('search.html'), user = user)
 
     else:
-        #flash("Please Log in to Access Function")
+        flash("Please Log in to Access Function")
         return redirect(url_for('reviews.result'))
 
 #search output
@@ -74,7 +76,7 @@ def result():
                 return render_template('reviews/result.html', titleslist = titleslist, user = user)
         #if no results, redirect to search
         else:
-            #flash("Redirecting to Search Page_
+            flash("Redirecting to Search Page")
             return redirect(url_for('reviews.search'))
     else:
         return redirect(url_for('home'))
@@ -94,13 +96,12 @@ def write():
                 reviewcommit = rating(game = str(game), stars = int(stars), review = str(writtenreview), user = str(user))
                 db.session.add(reviewcommit)
                 db.session.commit()
-                #flash("Review Successfully Posted")
+                flash("Review Successfully Posted")
                 return redirect(url_for('home'))
             else:
                 return render_template('reviews/write.html', game = game, user = user)
         else:
             return redirect(url_for(review.search))
     else:
-        #flash("Sign in to Access Function")
-        return render_template('home.html')
-        #return redirect(url_for('home'))
+        flash("Sign in to Access Function")
+        return redirect(url_for('home'))
