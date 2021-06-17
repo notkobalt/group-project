@@ -65,7 +65,11 @@ def signup() :
             commit = User(username = username, password = password)
             db.session.add(commit)
             db.session.commit()
-        return render_template('account/signup.html')
+            flash("User Successfully Created")
+            return redirect(url_for('account.login'))
+        else:
+            flash("Passwords do not Match")
+            return render_template('account/signup.html')
     else:
         return render_template('account/signup.html')
 

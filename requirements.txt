@@ -16,3 +16,5 @@ pytz
 six
 SQLAlchemy
 Werkzeug
+aniso8601
+Flask-RESTful

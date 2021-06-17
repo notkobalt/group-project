@@ -9,6 +9,31 @@
 </head>
 
 <body>
+<!-- Forms for Filter -->
+<div class="banner">
+    <div class="contiainer">
+        <h1>
+            <b>Filter Reviews</b>
+        </h1>
+        <form method="POST" class="form1">
+            <!-- Filter By -->
+            <div class="form-group">
+                <label for="category" class="floatlabel">Filter By:</label>
+                <select name="category" id="category" class="form-control">
+                    <option value="game">Game</option>
+                    <option value="user_review">User</option>
+                </select>
+            </div>
+            <!-- Filter -->
+            <div class="form-group">
+                <label for="filter" class="floatlabel">Filter</label>
+                <input name="filter" id="filter" type="text" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Display Games -->
 {% for entry in display %}
     <div>
         <p>Game: {{ entry['game'] }}</p>

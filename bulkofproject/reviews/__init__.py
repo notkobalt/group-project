@@ -4,6 +4,7 @@ from flask import Blueprint, render_template, __name__, request, session, redire
 import requests
 from bulkofproject.models import db, rating
 from bulkofproject.reviews.query import query
+from bulkofproject.reviews.filter import filter
 
 #create blueprint
 reviews_bp = Blueprint('reviews', __name__)
@@ -16,7 +17,16 @@ def review():
     else:
         user = ""
     if request.method == 'POST':
-        test = 'test'
+        #query database
+        origin = query()
+
+        #pull from front end
+        category = request.form['category']
+        inputfilter = request.form['filter']
+
+        #filter results
+        display = filter(origin, category, inputfilter)
+        return render_template('reviews/existing.html', user = user, display = display)
     else:
         display = query()
         print(display)
@@ -60,7 +70,7 @@ def search():
             session['results'] = titleslist
 
             return redirect(url_for('reviews.result'))
-        else: return render_template(('search.html'), user = user)
+        else: return render_template(('reviews/search.html'), user = user)
 
     else:
         flash("Please Log in to Access Function")
