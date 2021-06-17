@@ -36,3 +36,14 @@ def home() :
 @app.route('/easter')
 def easter() :
     return render_template('easteregg.html')
+
+@app.route('/ratingAPI', methods = ['GET', 'POST'])
+def accessratings():
+    ratings = rating.query.all()
+    ratinglist = []
+
+    for item in ratings:
+        ratinglist.append({'id':item.id, 'game':item.game, 'stars':item.stars, 'review': item.review, 'user': item.user})
+
+    response = jsonify({"ratings": ratinglist})
+    return response

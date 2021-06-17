@@ -30,6 +30,7 @@ def search():
         if request.method == 'POST':
             #request
             titleslist = []
+            titlesdictionary = {}
             displaylinks = ''
             searchurl = "https://api.rawg.io/api/games?key=91edf65dde2d49c7a6519987ed7c1769&search="
             searchentry = request.form['search']
@@ -42,6 +43,17 @@ def search():
             #for display on front end
             for item in searchresults:
                 titleslist.append(item['name'])
+
+            for item in searchresults:
+                titlesdictionary[item['name']] = item['background_image']
+
+            #format for HTML
+            displaylinks = ""
+            for x, y in titlesdictionary.items():
+                if y == None:
+                    displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='bulkofproject/static/greysquare.jpg'><div class='title'>" + x + "</div></div></a>"
+                else:
+                    displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
 
             #create session
             session.pop('results', None)
