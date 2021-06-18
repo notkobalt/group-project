@@ -17,8 +17,8 @@
         </h1>
         <form method="POST" class="form1">
             <!-- Filter By -->
-            <div class="form-group">
-                <label for="category" class="floatlabel">Filter By:</label>
+            <div class="form-group gameFilter">
+                <label for="category" class="floatlabel" style="font-size:35px; font-family:tahoma; padding-left: 155%; color:white">Category:</label>
                 <select name="category" id="category" class="form-control">
                     <option value="game">Game</option>
                     <option value="user_review">User</option>
@@ -26,7 +26,7 @@
             </div>
             <!-- Filter -->
             <div class="form-group">
-                <label for="filter" class="floatlabel">Filter</label>
+                <label for="filter" class="floatlabel" style="font-size:35px; font-family:tahoma; padding-left: 923px; color:white">Filter</label>
                 <input name="filter" id="filter" type="text" class="form-control">
             </div>
         </form>
@@ -35,17 +35,76 @@
 
 <!-- Display Games -->
 {% for entry in display %}
-    <div>
-        <p>Game: {{ entry['game'] }}</p>
-        <p>User: {{ entry['user_review'] }}</p>
-        <p>Stars: {{ entry['stars'] }}</p>
-        <p>User Review: {{ entry['review'] }}</p>
+
+<div class="container" style="padding-left: 11%; padding-top: 2%">
+    <div style="border-width:5px; border-style:solid; border-color:white; width: 80%; border-radius: 40px ">
+        <p style="font-family:tahoma">Game: {{ entry['game'] }}</p>
+        <p style="font-family:tahoma">User: {{ entry['user_review'] }}</p>
+        <p style="font-family:tahoma">Stars: {{ entry['stars'] }}</p>
+        <p style="font-family:tahoma">User Review: {{ entry['review'] }}</p>
     </div>
+</div>
+
+    </textarea>
 {% endfor %}
 </body>
 
 <style>
 
+    h1{
+        padding-left: 34%;
+        font-size: 80px;
+        font-family: "verdana";
+        color: white;
+    }
+
+    p{
+        text-align: center;
+        font-size: 26px;
+        font-family: "verdana";
+        color: white;
+    }
+
+
+        input[type="text"],
+        input[type="password"],
+
+        textarea,
+        select {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            font-size: 20px;
+            height: auto;
+            margin-left: 675px;
+            outline: 0;
+            padding: 13px;
+            width: 30%;
+            background-color: #e8eeef;
+            border-radius: 40px;
+            color: #8a97a0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+            margin-bottom: 30px;
+        }
+
+    .gameFilter {
+            border: none;
+            font-size: 20px;
+            height: auto;
+            outline: 0;
+            width: 30%;
+            border-radius: 40px;
+            color: #8a97a0;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    }
+
+
+
 </style>
+
+
+
+
+
+
 {% endblock %}
 </html>
