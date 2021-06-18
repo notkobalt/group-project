@@ -5,16 +5,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Results</title>
+<style>
+    .resultbox{
+        align-content: center;
+
+    }
+
+    .buttonstyle{
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 280px;
+        height: 280px;
+        margin: 2%;
+        float: left;
+    }
+
+    .displaytext{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: brightness(100%);
+
+    }
+
+    .container:hover .icon {
+    filter: brightness(60%);
+    transform: scale(.95);
+}
+
+
+</style>
+
+
 </head>
 <body>
     <!-- Display Search Results -->
-    <form method="POST">
-        <p>Search Results: </p>
-        {% for index in titleslist %}
-        <button id="gamepick" name="gamepick" type="input" class="btn btn-primary" value = "{{ index }}">{{ index }}</button>
+    <form method="POST" class='resultbox'>
+        {% for key, value in titlesdictionary.items() %}
+        <button id="gamepick" name="gamepick" type="input" style="background: url('{{ value }}') no-repeat; transition: all .2s ease-in-out;" class="btn btn-primary buttonstyle" value = "{{ key }}"> <span style="font-weight: bolder; -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black; "> {{ key }} </span></button>
         {% endfor %}
     </form>
 
 </body>
 {% endblock %}
 </html>
+
+<!--
+<form method="POST" class='resultbox'>
+    <p>Search Results: </p>
+    {% for index in titleslist %}
+    <button id="gamepick" name="gamepick" type="input" class="btn btn-primary buttonstyle" value = "{{ index }}">{{ index }}</button>
+    {% endfor %}
+</form>
+-->

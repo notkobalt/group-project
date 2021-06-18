@@ -57,17 +57,9 @@ def search():
             for item in searchresults:
                 titlesdictionary[item['name']] = item['background_image']
 
-            #format for HTML
-            displaylinks = ""
-            for x, y in titlesdictionary.items():
-                if y == None:
-                    displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='bulkofproject/static/greysquare.jpg'><div class='title'>" + x + "</div></div></a>"
-                else:
-                    displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
-
             #create session
             session.pop('results', None)
-            session['results'] = titleslist
+            session['results'] = titlesdictionary
 
             return redirect(url_for('reviews.result'))
         else: return render_template(('reviews/search.html'), user = user)
@@ -93,9 +85,9 @@ def result():
                 return redirect(url_for('reviews.write'))
             else:
                 #pull results from search page
-                titleslist = session['results']
+                titlesdictionary = session['results']
 
-                return render_template('reviews/result.html', titleslist = titleslist, user = user)
+                return render_template('reviews/result.html', titlesdictionary = titlesdictionary, user = user)
         #if no results, redirect to search
         else:
             flash("redirecting to search...")

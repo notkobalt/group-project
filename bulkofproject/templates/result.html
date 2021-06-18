@@ -45,7 +45,7 @@ filter: brightness(100%);
 </style>
 </head>
 
-@@ -31,9 +65,11 @@ <h1> please enter a game title to search through results and generate a random g
+<h1> please enter a game title to search through results and generate a random g
     <button style = "margin-top: 50px">Go!</button>
 </form>
 
@@ -57,3 +57,7 @@ filter: brightness(100%);
 </div>
 
 </body>
+
+
+        for x, y in titlesdictionary.items():
+            displaylinks = displaylinks + "<a href=#><div class='container'> <img class='icon' src='" + y + "'><div class='title'>" + x + "</div></div></a>"
