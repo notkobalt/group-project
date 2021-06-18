@@ -8,6 +8,9 @@ We also want to include a login system to show user's reviews and details.
 - Runtime link: http://76.176.48.196:5671/
 - Crossover group: p4-fishes
 
+## Crossover
+Our original parter group was the fishies, however they finished a week early and collaborated with another group in period 3. We were not informed, and due to the miscommunication we needed to collaborate with the "Web Errors" group because they also needed a parter. We display the fishies' API as per our original agreement, however the "Web Errors" group displays our API instead of the fishies. 
+
 ### Features:
 - 5 star based rating system for games, along with a written summary for the rating
 - REST API used for searching game titles for a wide database of games to review
@@ -38,15 +41,10 @@ We also want to include a login system to show user's reviews and details.
   - [Display Existing Reviews](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 30-33 [Database Query Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/query.py)
   - [Filter Database Based on User Input](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 12-29 [Filter Database Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/filter.py)
 
-## Crossover
-Our original parter group was the fishies, however they finished a week early and collaborated with another group in period 3. We were not informed, and due to the miscommunication we needed to collaborate with the "Web Errors" group because they also needed a parter. We display the fishies' API as per our original agreement, however the "Web Errors" group displays our API instead of the fishies. 
-
-# Progress 6/8
 ### Blueprints
 - Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
   - ex: Game review code is in the "reviews" blueprint
-- Mini-labs will each be in their seperate blueprints
-- Splitting our project into blueprints corresponding to each group memeber would be inefficient for our project, it stops any chance for teamwork when coding our project. We have multiple tickets where group members work together, having individual folders for each group member's code would lead to one group member not recieving credit for their work, or duplicate dead code.
+- Students labs will each be in their seperate blueprints
 
 ### Login
 - One database stores usernames and passwords for login system
@@ -64,13 +62,8 @@ Our original parter group was the fishies, however they finished a week early an
 - Routing and API query code in a "Blueprint" in order to keep project organized
 
 ### Rating Systen
-- WIP
-
-# Update 6/1
-- A search system has been created using the API, along with a random game reccomendation function
-- Front page, navbar, login page have finished CSS
-- Website is deployed and accessable
-- Rating system and the link from search result to review page is in development
-- Login system is complete, user pages are in development
+- 5 star rating system using a simple dropdown bar
+- Written review to go along with the stars
+- Stored in a database along with ID and username of the user who posted it for easy display
 
 
