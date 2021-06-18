@@ -16,8 +16,8 @@ def bubble():
 def classes():
     if request.method =='POST':
         calculation = Calc(int(request.form.get("series")))
-        return render_template(("classesminilab/kirabubble.html"), calculation = calculation)
-    return render_template('classesminilab/kirabubble.html', calculation = Calc(5))
+        return render_template(("kira/kiraclasses.html"), calculation = calculation)
+    return render_template('kira/kiraclasses.html', calculation = Calc(5))
 
 @kiradirectory.route('/')
 def Kira() :

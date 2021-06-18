@@ -38,7 +38,7 @@ def bubble():
         return render_template('dylan/bubble.html', initial = initial, final = final)
 
 
-    return render_template('bubblesortminilab/bubble.html')
+    return render_template('dylan/bubble.html')
 
 @dylandirectory.route('/classes', methods = ['GET', 'POST'])
 def classes():
