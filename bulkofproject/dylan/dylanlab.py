@@ -1,23 +1,57 @@
-#imports
-from random import randrange
+#class function
+class rsa:
+    def __init__(self, message, key1, key2):
+        self._message = message
+        self._key1 = key1
+        self._key2 = key2
 
-#list generator
-def listgen(size):
-    list = []
-    for i in range(0, size):
-        index = randrange(65, 93)
-        list.append(index)
-    return list
+        self.func(message, key1, key2)
 
-#bubble sort
-def bubblesort (list):
-    final = list
-    #loop for entire list
-    for i in range(len(final)):
-        #test list value vs the rest of the list
-        for j in range(0, len(final)-1):
-            #if list value is greater than next replace
-            if final[j] > final[j + 1]:
-                #replacement code
-               final[j], final[j + 1] = final[j + 1], final[j]
-    return final
+    def func(self, message, key1, key2):
+        #empty variable
+        output = []
+        #loop for entire message
+        for i in range (0, len(message)):
+            char = message[i]
+            #replace letters in message w/ encrypted values
+            C = chr((ord(char) ^ key1) % key2)
+            #append list
+            output.append(C)
+
+        #return output
+        return output
+
+    #callable properties "getters"
+    @property
+    def message(self):
+        return self._message
+
+    @property
+    def key1(self):
+        return self._key1
+
+    @property
+    def key2(self):
+        return self._key2
+
+    @property
+    def end(self):
+        return self.func(self._message, self._key1, self._key2)
+
+    @property
+    def endclean(self):
+        return ''.join(self.func(self._message, self._key1, self._key2))
+
+#test run
+if __name__ == '__main__':
+    #testing values
+    message = "Hello World!"
+    key1 = 29
+    key2 = 12450239511112411112513261923421
+    #construct class
+    encoded = rsa(message, key1, key2)
+    print(encoded.message)
+    print(encoded.key1)
+    print(encoded.key2)
+    print(encoded.end)
+    print(encoded.endclean)

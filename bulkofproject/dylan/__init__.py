@@ -1,7 +1,8 @@
 #import flask and blueprints
 from flask import Blueprint, render_template, __name__, request
 #import dylan lab
-from bulkofproject.dylan.dylanlab import listgen, bubblesort
+from bulkofproject.dylan.bubble import listgen, bubblesort
+from bulkofproject.dylan.dylanlab import rsa
 
 #create blueprint
 dylandirectory = Blueprint('dylandirectory', __name__)
@@ -34,7 +35,24 @@ def bubble():
                 integer = chr(integer)
                 final.append(integer)
 
-        return render_template('bubblesortminilab/dylan.html', initial = initial, final = final)
+        return render_template('dylan/bubble.html', initial = initial, final = final)
 
 
-    return render_template('bubblesortminilab/dylan.html')
+    return render_template('bubblesortminilab/bubble.html')
+
+@dylandirectory.route('/classes', methods = ['GET', 'POST'])
+def classes():
+    if request.method == 'POST':
+        message = str(request.form.get('message'))
+        key1 = int(request.form.get('key1'))
+        key2 = int(request.form.get('key2'))
+
+        encrypted = rsa(message, key1, key2)
+        msg = encrypted.message
+        k1 = encrypted.key1
+        k2 = encrypted.key2
+        final = encrypted.end
+        clean = encrypted.endclean
+
+        return render_template('dylan/classes.html', output = True, msg = msg, k1 = k1, k2 = k2, final = final, clean = clean)
+    return render_template('dylan/classes.html')

@@ -5,7 +5,7 @@ from bulkofproject.jacob.sort import bubba
 jacobdirectory = Blueprint('jacobdirectory', __name__,
                             template_folder='/bubblesortminilab')
 
-@jacobdirectory.route('/', methods=["GET", "POST"])
+@jacobdirectory.route('/bubble', methods=["GET", "POST"])
 def sort():
     if request.form:
         all_list = []
@@ -19,6 +19,10 @@ def sort():
             b = b + 1
         bubble = bubba(all_list)
 
-        return render_template('bubblesortminilab/jacobbubble.html', active_page='Jacob', testing=bubble)
+        return render_template('jacob/bubble.html', active_page='Jacob', testing=bubble)
 
-    return render_template('bubblesortminilab/jacobbubble.html', active_page='Jacob')
+    return render_template('jacob/bubble.html', active_page='Jacob')
+
+@jacobdirectory.route('/classes')
+def classes():
+    return render_template('jacob/classes.html')

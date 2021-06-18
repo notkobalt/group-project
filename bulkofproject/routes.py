@@ -24,7 +24,7 @@ app.register_blueprint(account, url_prefix='/account')
 app.register_blueprint(kiradirectory, url_prefix='/kira')
 app.register_blueprint(roopdirectory, url_prefix='/roop')
 app.register_blueprint(dylandirectory, url_prefix='/dylan')
-app.register_blueprint(lucasdirectory, url_prefix='lucas')
+app.register_blueprint(lucasdirectory, url_prefix='/lucas')
 app.register_blueprint(jacobdirectory, url_prefix='/jacob')
 
 
