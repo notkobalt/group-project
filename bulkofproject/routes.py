@@ -39,14 +39,11 @@ def home() :
 
 @app.route('/easter', methods = ["GET", "POST"])
 def easter() :
-    prettytext = ''
     weatherresponse = requests.request("GET", "https://fish.nighthawkcodingsociety.com/all_ideal_weathers")
     weatherdump = weatherresponse.json()
     weatherresults = weatherdump["all_ideal_weathers"]
 
-    for item in weatherresults:
-        prettytext = prettytext + "<div class='box'><div class='text'> ID:" + str(item['id']) + "</br> Condition:" + item['condition'] + "</br> Temperature:" + str(item['temp']) + "</br> Description:" + item['desc'] + "</br> Date Added:" + item['date_added'] + "</div></div>"
-    return render_template('easteregg.html', prettytext = prettytext)
+    return render_template('easteregg.html', weatherresults = weatherresults)
 
 @app.route('/ratingAPI', methods = ['GET', 'POST'])
 def accessratings():
