@@ -1,6 +1,7 @@
 #imports
+import requests
 ##import website components
-from flask import render_template, session, jsonify
+from flask import render_template, session, jsonify, request
 ##import config from __init__
 from bulkofproject import app
 #import models
@@ -36,9 +37,16 @@ def home() :
     #not in session (logged out)
     return render_template('home.html')
 
-@app.route('/easter')
+@app.route('/easter', methods = ["GET", "POST"])
 def easter() :
-    return render_template('easteregg.html')
+    prettytext = ''
+    weatherresponse = requests.request("GET", "https://fish.nighthawkcodingsociety.com/all_ideal_weathers")
+    weatherdump = weatherresponse.json()
+    weatherresults = weatherdump["all_ideal_weathers"]
+
+    for item in weatherresults:
+        prettytext = prettytext + "<div class='box'><div class='text'> ID:" + str(item['id']) + "</br> Condition:" + item['condition'] + "</br> Temperature:" + str(item['temp']) + "</br> Description:" + item['desc'] + "</br> Date Added:" + item['date_added'] + "</div></div>"
+    return render_template('easteregg.html', prettytext = prettytext)
 
 @app.route('/ratingAPI', methods = ['GET', 'POST'])
 def accessratings():

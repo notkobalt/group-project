@@ -11,22 +11,33 @@
 
 <div class="banner">
     <div class="container">
-        <h1><b>search a city for its current weather!</b></h1>
+        <h1><b>p4-fishies </b></h1>
         <h1>⠀</h1>
-        <form method="POST" ID="formName" action=# class="form3">
-            <p>
-                <label for="city" class="floatLabel"></label>
-                <input id="city" name="city" placeholder="search a city..." type="text" required="required">
-            </p>
-                <input type="submit" class="button button-primary" value="search">
-            </p>
-        </form>
 
     </div>
 </div>
+
+{{ prettytext | safe }}
+
 </body>
 
 <style>
+        .text{
+            margin-left: 5%;
+            padding-top: 5%;
+            font-family: "verdana";
+        }
+
+        .box{
+            margin: auto;
+            width: 500px;
+            height: 200px;
+            background-color: white;
+            border-radius: 10px;
+            padding-top: 5%
+            padding-left: 5%
+        }
+
         body, html {
             height: 100%;
         }

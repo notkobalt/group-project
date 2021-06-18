@@ -2,8 +2,7 @@ from flask import request, Blueprint, render_template
 
 from bulkofproject.jacob.sort import bubba
 
-jacobdirectory = Blueprint('jacobdirectory', __name__,
-                            template_folder='/bubblesortminilab')
+jacobdirectory = Blueprint('jacobdirectory', __name__)
 
 @jacobdirectory.route('/bubble', methods=["GET", "POST"])
 def sort():
