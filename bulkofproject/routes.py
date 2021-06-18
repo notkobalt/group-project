@@ -1,25 +1,31 @@
 #imports
 ##import website components
-from flask import render_template, request, session, redirect, url_for, jsonify, flash
+from flask import render_template, session, jsonify
 ##import config from __init__
 from bulkofproject import app
 #import models
-from bulkofproject.models import User, rating
+from bulkofproject.models import rating
 ##import blueprints
 from bulkofproject.classesminilab import classesminilab
-from bulkofproject.bubblesortminilab import bubblesortminilab
-from bulkofproject.classesminilab.jacobminilab import jacobblueprint
 from bulkofproject.classesminilab.jacobbubblelab import jacobbubblesort
 from bulkofproject.account import account
 from bulkofproject.reviews import reviews_bp
+from bulkofproject.kira import kiradirectory
+from bulkofproject.roop import roopdirectory
+from bulkofproject.dylan import dylandirectory
+from bulkofproject.lucas import lucasdirectory
+from bulkofproject.jacob import jacobdirectory
 
 #register blueprints
 app.register_blueprint(classesminilab, url_prefix='/classes')
-app.register_blueprint(bubblesortminilab, url_prefix='/bubble_sort')
-app.register_blueprint(jacobblueprint, url_prefix='/jacobblueprint')
 app.register_blueprint(jacobbubblesort, url_prefix='/jacobbubblesort')
 app.register_blueprint(reviews_bp, url_prefix='/reviews')
 app.register_blueprint(account, url_prefix='/account')
+app.register_blueprint(kiradirectory, url_prefix='/kira')
+app.register_blueprint(roopdirectory, url_prefix='/roop')
+app.register_blueprint(dylandirectory, url_prefix='/dylan')
+app.register_blueprint(lucasdirectory, url_prefix='lucas')
+app.register_blueprint(jacobdirectory, url_prefix='/jacob')
 
 
 

@@ -2,11 +2,10 @@ from flask import request, Blueprint, render_template
 
 from bulkofproject.jacob.sort import bubba
 
-jacobbubblesort = Blueprint('jacobbubble', __name__,
+jacobdirectory = Blueprint('jacobdirectory', __name__,
                             template_folder='/bubblesortminilab')
 
-
-@jacobbubblesort.route('/', methods=["GET", "POST"])
+@jacobdirectory.route('/', methods=["GET", "POST"])
 def sort():
     if request.form:
         all_list = []

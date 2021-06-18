@@ -5,7 +5,7 @@ from bulkofproject.classesminilab.dylanlab import rsa as rsa
 
 from bulkofproject.classesminilab.kiralab import Calc
 
-from bulkofproject.classesminilab.jacobminilab.jacoblab import Characters
+#from bulkofproject.jacob.sort import Characters
 
 classesminilab = Blueprint('classes', __name__)
 
@@ -31,8 +31,8 @@ def dylan():
 def kira():
     if request.method =='POST':
         calculation = Calc(int(request.form.get("series")))
-        return render_template(("classesminilab/kira.html"), calculation = calculation)
-    return render_template('classesminilab/kira.html', calculation = Calc(5))
+        return render_template(("classesminilab/kirabubble.html"), calculation = calculation)
+    return render_template('classesminilab/kirabubble.html', calculation = Calc(5))
 
 
 @classesminilab.route('/jacob')
