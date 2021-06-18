@@ -11,7 +11,7 @@
 
 <div class="banner">
     <div class="container">
-        <h1 style="padding-top:5%"><b>Browse the weather for different locations!</b></h1>
+        <h1 style="padding-top:5%; padding-bottom:5%; text-align: center;"><b>Browse the weather for different locations!</b></h1>
     </div>
     <p style="margin-left:25%">
         {{ prettytext | safe }}
@@ -19,13 +19,15 @@
 </div>
 
 <div>
-    <div class="container">
+    <div class="container" style="width: 600px; height: 200px">
         {% for item in weatherresults %}
-            <p>ID: {{ item['id'] }}</p>
+        <div style="border-radius: 40px; border-color:white; background-color:white">
+            <p style="padding-top:5%">ID: {{ item['id'] }}</p>
             <p>Condition: {{ item['condition'] }}</p>
             <p>Temperature: {{ item['temp'] }}</p>
             <p>Description: {{ item['desc'] }}</p>
-            <p>Date Added: {{ item['date_added'] }}</p>
+            <p style="padding-bottom:10%">Date Added: {{ item['date_added'] }}</p>
+    </div>
         {% endfor %}
     </div>
 </div>
@@ -35,33 +37,17 @@
 </body>
 
 <style>
-        .text{
-            margin-left: 5%;
-            padding-top: 5%;
+        p{
+            margin-left: 2.5%;
             font-family: "verdana";
-        }
-
-        .box{
-            margin-top: 0.75%;
-            width: 500px;
-            height: 200px;
-            background-color: white;
-            border-radius: 18px;
+            color:black;
+            font-size:140%;
         }
 
         body, html {
             height: 100%;
         }
 
-
-        .container{
-            padding-top: 0%;
-            padding-left: 0px;
-            width:90vw;
-            height: 90vh;
-
-
-        }
 
         .element{
             position:absolute;
@@ -72,13 +58,6 @@
 
         }
 
-        .login{
-            text-align: center;
-            vertical-align: middle;
-            width: 50vw; height: 50vh;
-            color: black; font-size: 2rem;
-
-        }
 
         h1{
             font-size: 60px;
