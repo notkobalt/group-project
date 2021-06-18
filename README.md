@@ -11,6 +11,11 @@ We also want to include a login system to show user's reviews and details.
 - REST API used for searching game titles for a wide database of games to review
 - User accounts that display their reviews
 - Easy way to filter games based on genre
+- In order to view Fishies' API endpoint, click on the logo in the middle of the home page
+
+### Easter Egg:
+- Click on Logo in the middle of the home page to view our easter egg
+  - Easter egg is data pulled from the Fishies API
 
 ### How It's Made:
 - Login System
