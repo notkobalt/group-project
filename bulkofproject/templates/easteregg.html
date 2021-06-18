@@ -11,13 +11,14 @@
 
 <div class="banner">
     <div class="container">
-        <h1><b>p4-fishies </b></h1>
-        <h1>⠀</h1>
-
+        <h1 style="padding-top:5%"><b>Browse the weather for different locations!</b></h1>
     </div>
+    <p style="margin-left:25%">
+        {{ prettytext | safe }}
+    </p>
 </div>
 
-{{ prettytext | safe }}
+
 
 </body>
 
@@ -29,13 +30,11 @@
         }
 
         .box{
-            margin: auto;
+            margin-top: 0.75%;
             width: 500px;
             height: 200px;
             background-color: white;
-            border-radius: 10px;
-            padding-top: 5%
-            padding-left: 5%
+            border-radius: 18px;
         }
 
         body, html {
@@ -44,11 +43,10 @@
 
 
         .container{
-            padding-top: 125px;
+            padding-top: 0%;
             padding-left: 0px;
             width:90vw;
             height: 90vh;
-            margin: auto;
 
 
         }
@@ -69,46 +67,9 @@
             color: black; font-size: 2rem;
 
         }
-        input[type="text"],
-        input[type="password"],
-
-        textarea,
-        select {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            font-size: 20px;
-            height: auto;
-            margin: 0;
-            outline: 0;
-            padding: 13px;
-            width: 50%;
-            background-color: #e8eeef;
-            border-radius: 40px;
-            color: #8a97a0;
-            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-            margin-bottom: 30px;
-        }
-
-        input[type="submit"],
-        input[type="button"]
-        {
-            padding: 19px 39px 18px 39px;
-            color: #FFF;
-            background-color: #57bcff;
-            font-size: 18px;
-            text-align: center;
-            font-style: normal;
-            width: 50%;
-            border-radius: 40px;
-            border: 1px solid #2591d9;
-            border-width: 1px 1px 3px;
-            box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-            margin-bottom: 10px;
-        }
 
         h1{
             font-size: 60px;
-
             font-style: normal;
             color: #ffffff;
         }
