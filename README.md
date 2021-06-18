@@ -1,5 +1,7 @@
 # Our Website
 
+[![Commercial](https://user-images.githubusercontent.com/70781122/122547244-b28cd800-cfe4-11eb-9761-ffac0f4a3268.JPG)](https://www.youtube.com/watch?v=zqX350T5Stg "Click to watch our commercial!")
+
 Hello! We are the group, and our website goal is to make an easily accessable way to both review games and look at overviews of games to find ones to your liking. 
 We also want to include a login system to show user's reviews and details.
 - https://docs.google.com/document/d/1EFlapSLtudKA0r42AZ46T57u7ksnPDTYismk6XoxVEc/edit?usp=sharing
