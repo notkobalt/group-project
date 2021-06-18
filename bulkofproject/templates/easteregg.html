@@ -18,6 +18,18 @@
     </p>
 </div>
 
+<div>
+    <div class="container">
+        {% for item in weatherresults %}
+            <p>ID: {{ item['id'] }}</p>
+            <p>Condition: {{ item['condition'] }}</p>
+            <p>Temperature: {{ item['temp'] }}</p>
+            <p>Description: {{ item['desc'] }}</p>
+            <p>Date Added: {{ item['date_added'] }}</p>
+        {% endfor %}
+    </div>
+</div>
+
 
 
 </body>
