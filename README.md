@@ -14,7 +14,7 @@ We also want to include a login system to show user's reviews and details.
 
 ### How It's Made:
 - Login System
-  - (Create user table in site database)[https://github.com/notkobalt/group-project/blob/main/bulkofproject/models.py] Lines 8-16
+  - [Create user table in site database][https://github.com/notkobalt/group-project/blob/main/bulkofproject/models.py] Lines 8-16
 
 # Progress 6/8
 ### Blueprints
