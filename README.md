@@ -12,6 +12,10 @@ We also want to include a login system to show user's reviews and details.
 - User accounts that display their reviews
 - Easy way to filter games based on genre
 
+### How It's Made:
+- Login System
+  - (Create user table in site database)[https://github.com/notkobalt/group-project/blob/main/bulkofproject/models.py] Lines 8-16
+
 # Progress 6/8
 ### Blueprints
 - Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
