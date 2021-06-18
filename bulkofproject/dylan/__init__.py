@@ -56,3 +56,7 @@ def classes():
 
         return render_template('dylan/classes.html', output = True, msg = msg, k1 = k1, k2 = k2, final = final, clean = clean)
     return render_template('dylan/classes.html')
+
+@dylandirectory.route('/')
+def Dylan() :
+    return render_template('dylan/Dylan.html')
