@@ -36,14 +36,14 @@ def login() :
                 return redirect(url_for('home'))
             #no match
             else:
-                flash("Incorrect Username or Password")
+                flash("incorrect user or password!")
                 return redirect(url_for('account.login'))
         except:
-            flash("Incorrect Username or Password")
+            flash("incorrect user or password!")
             return redirect(url_for('account.login'))
     else:
         if 'user' in session:
-            flash ("User Already Logged In")
+            flash ("you're already logged in!")
             return redirect(url_for('home'))
         else:
             return render_template('account/login.html')
@@ -52,7 +52,7 @@ def login() :
 @account.route('/signup', methods = ['GET', 'POST'])
 def signup() :
     if 'user' in session:
-        flash ("User Already Logged In")
+        flash ("you're already logged in!")
         return redirect(url_for('home'))
     elif request.method == 'POST':
         #get elements from front end
@@ -65,10 +65,10 @@ def signup() :
             commit = User(username = username, password = password)
             db.session.add(commit)
             db.session.commit()
-            flash("User Successfully Created")
+            flash("successfully created account!")
             return redirect(url_for('account.login'))
         else:
-            flash("Passwords do not Match")
+            flash("passwords do not match")
             return render_template('account/signup.html')
     else:
         return render_template('account/signup.html')

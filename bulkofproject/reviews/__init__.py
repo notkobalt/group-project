@@ -73,7 +73,7 @@ def search():
         else: return render_template(('reviews/search.html'), user = user)
 
     else:
-        flash("Please Log in to Access Function")
+        flash("please login before writing a review!")
         return redirect(url_for('reviews.result'))
 
 #search output
@@ -98,7 +98,7 @@ def result():
                 return render_template('reviews/result.html', titleslist = titleslist, user = user)
         #if no results, redirect to search
         else:
-            flash("Redirecting to Search Page")
+            flash("redirecting to search...")
             return redirect(url_for('reviews.search'))
     else:
         return redirect(url_for('home'))
@@ -118,12 +118,12 @@ def write():
                 reviewcommit = rating(game = str(game), stars = int(stars), review = str(writtenreview), user = str(user))
                 db.session.add(reviewcommit)
                 db.session.commit()
-                flash("Review Successfully Posted")
+                flash("review posted successfully")
                 return redirect(url_for('home'))
             else:
                 return render_template('reviews/write.html', game = game, user = user)
         else:
             return redirect(url_for(review.search))
     else:
-        flash("Sign in to Access Function")
+        flash("please sign in before accessing the rest of the website!")
         return redirect(url_for('home'))
