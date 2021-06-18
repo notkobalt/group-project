@@ -14,3 +14,7 @@ def bubble():
 @lucasdirectory.route('/classes')
 def classes():
     return render_template('lucas/classes.html')
+
+@lucasdirectory.route('/')
+def Lucas():
+    return render_template('lucas/lucas.html')

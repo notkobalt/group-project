@@ -11,10 +11,33 @@ We also want to include a login system to show user's reviews and details.
 - REST API used for searching game titles for a wide database of games to review
 - User accounts that display their reviews
 - Easy way to filter games based on genre
+- In order to view Fishies' API endpoint, click on the logo in the middle of the home page
+
+### Easter Egg:
+- Click on Logo in the middle of the home page to view our easter egg
+  - Easter egg is data pulled from the Fishies API
 
 ### How It's Made:
 - Login System
   - [Create user table in site database](https://github.com/notkobalt/group-project/blob/main/bulkofproject/models.py) Lines 8-16
+  - Create HTML Pages for [Login](https://github.com/notkobalt/group-project/blob/main/bulkofproject/templates/account/login.html) and [Sign Up](https://github.com/notkobalt/group-project/blob/main/bulkofproject/templates/account/signup.html)
+  - Login: [Use Database to check user input](https://github.com/notkobalt/group-project/blob/main/bulkofproject/account/__init__.py) Lines 15-49
+  - Sign Up: [Commit User Input to Database](https://github.com/notkobalt/group-project/blob/main/bulkofproject/account/__init__.py) Lines 52-74
+  - Session Data in Every Route
+  - [Log Out by Removing Session Data](https://github.com/notkobalt/group-project/blob/main/bulkofproject/account/__init__.py) Lines 76-83
+
+- Rating System
+  - [Database for User Reviews](https://github.com/notkobalt/group-project/blob/main/bulkofproject/models.py) Lines 18-28
+  - [Scrape API With Games List](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 45-51
+  - [Search Funciton Creates Session Based on User Data](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 35-77
+  - [Get Search Results From Session Data](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 79-104
+  - [Displayed Search Results Route to Review Page, Game Selected is Used For Review](https://github.com/notkobalt/group-project/blob/main/bulkofproject/templates/reviews/result.html) Lines 9-18 [Back End](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 70-104
+  - [Write Review](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 107-129
+  - [Display Existing Reviews](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 30-33 [Database Query Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/query.py)
+  - [Filter Database Based on User Input](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 12-29 [Filter Database Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/filter.py)
+
+## Crossover
+Our original parter group was the fishies, however they finished a week early and collaborated with another group in period 3. We were not informed, and due to the miscommunication we needed to collaborate with the "Web Errors" group because they also needed a parter. We display the fishies' API as per our original agreement, however the "Web Errors" group displays our API instead of the fishies. 
 
 # Progress 6/8
 ### Blueprints
