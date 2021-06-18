@@ -18,3 +18,7 @@ def classes():
         calculation = Calc(int(request.form.get("series")))
         return render_template(("classesminilab/kirabubble.html"), calculation = calculation)
     return render_template('classesminilab/kirabubble.html', calculation = Calc(5))
+
+@kiradirectory.route('/')
+def Kira() :
+    return render_template('kira/kira.html')

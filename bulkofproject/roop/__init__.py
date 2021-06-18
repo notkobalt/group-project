@@ -17,3 +17,7 @@ def bubble():
 @roopdirectory.route('/classes')
 def classes():
     return render_template('roop/classes.html')
+
+@roopdirectory.route('/')
+def Roop():
+    return render_template('roop/roop.html')

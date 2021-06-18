@@ -25,3 +25,7 @@ def sort():
 @jacobdirectory.route('/classes')
 def classes():
     return render_template('jacob/classes.html')
+
+@jacobdirectory.route('/')
+def Jacob() :
+    return render_template('jacob/jacob.html')
