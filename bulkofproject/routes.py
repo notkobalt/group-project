@@ -55,3 +55,4 @@ def accessratings():
 
     response = jsonify({"ratings": ratinglist})
     return response
+
