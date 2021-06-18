@@ -7,7 +7,7 @@ from bulkofproject.reviews.query import query
 from bulkofproject.reviews.filter import filter
 
 #create blueprint
-reviews_bp = Blueprint('reviews', __name__)
+reviews_bp = Blueprint('reviews', __name__, template_folder = '/reviews')
 
 #display reviews
 @reviews_bp.route('/', methods = ['GET', 'POST'])

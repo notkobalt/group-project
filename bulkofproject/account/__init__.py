@@ -5,7 +5,7 @@ from bulkofproject.models import User
 from bulkofproject import db
 
 #create blueprint
-account = Blueprint('account', __name__)
+account = Blueprint('account', __name__, template_folder = 'account')
 
 
 @account.route('/profile')
