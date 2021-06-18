@@ -55,7 +55,10 @@ def search():
                 titleslist.append(item['name'])
 
             for item in searchresults:
-                titlesdictionary[item['name']] = item['background_image']
+                if item['background_image'] == None:
+                    titlesdictionary[item['name']] = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.tlDKZhACEaIkaATgSSsXygAAAA%26pid%3DApi&f=1'
+                else:
+                    titlesdictionary[item['name']] = item['background_image']
 
             #create session
             session.pop('results', None)

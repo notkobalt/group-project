@@ -52,20 +52,75 @@
   transform: translate(-50%, -50%);
   filter: brightness(100%);
 }
+
+
+.search{
+    text-align: center;
+    vertical-align: middle;
+    width: 50vw; height: 50vh;
+    color: black; font-size: 2rem;
+
+}
+input[type="text"],
+input[type="password"],
+
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 20px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 13px;
+    width: 50%;
+    background-color: #e8eeef;
+    border-radius: 40px;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+}
+
+input[type="submit"],
+input[type="button"]
+{
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 50%;
+    border-radius: 40px;
+    border: 1px solid #3ac162;
+    border-width: 1px 1px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    margin-bottom: 10px;
+}
 </style>
 </head>
 
 <body>
 
 <div class="content">
-<h1> please enter a game title to search through results and generate a random game!</h1>
+<h1 style="font-size: 30px"> please enter a game title to search through results!</h1>
 
-<form id="gamesearch" action= "#" method="POST" >
-    <input style = "margin-top: 50px" name="search" id="search" type = "text">
-    <button style = "margin-top: 50px">Go!</button>
+<form id="gamesearch" action= "#" method="POST" style="padding-top:5%; text-align:center;">
+    <p>
+        <label for="search" class="floatLabel" ></label>
+        <input id="search" name="search" placeholder="search" type="text" required="required" >
+    </p>
+    <input type="submit" class="button button-primary" value="Go!">
+    </p>
 </form>
+
 
 </div>
 </body>
 
 {% endblock %}
+
+<!--POST form where the user will enter a game title to search
+<input style = "margin-top: 50px" name="search" id="search" type = "text">
+<button style = "margin-top: 50px">Go!</button>
+ -->

@@ -19,6 +19,8 @@
         height: 280px;
         margin: 2%;
         float: left;
+        padding: 10px;
+        white-space: normal;
     }
 
     .displaytext{
@@ -44,7 +46,7 @@
     <!-- Display Search Results -->
     <form method="POST" class='resultbox'>
         {% for key, value in titlesdictionary.items() %}
-        <button id="gamepick" name="gamepick" type="input" style="background: url('{{ value }}') no-repeat; transition: all .2s ease-in-out;" class="btn btn-primary buttonstyle" value = "{{ key }}"> <span style="font-weight: bolder; -webkit-text-stroke-width: 0.5px;
+        <button id="gamepick" name="gamepick" type="input" style="background: url('{{ value }}') no-repeat; background-size: 600px; transition: all .2s ease-in-out;" class="btn btn-primary buttonstyle" value = "{{ key }}"> <span style="font-weight: bolder; -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: black; "> {{ key }} </span></button>
         {% endfor %}
     </form>
