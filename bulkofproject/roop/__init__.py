@@ -2,8 +2,7 @@
 from flask import Blueprint, render_template, __name__, request
 import json
 #import dylan lab
-from bulkofproject.dylan.bubble import listgen, bubblesort
-from bulkofproject.kira.kirabubble import Sort
+from bulkofproject.roop.roopbubble import Sort
 
 #create blueprint
 roopdirectory = Blueprint('roopdirectory', __name__)

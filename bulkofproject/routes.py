@@ -6,8 +6,6 @@ from bulkofproject import app
 #import models
 from bulkofproject.models import rating
 ##import blueprints
-from bulkofproject.classesminilab import classesminilab
-from bulkofproject.classesminilab.jacobbubblelab import jacobbubblesort
 from bulkofproject.account import account
 from bulkofproject.reviews import reviews_bp
 from bulkofproject.kira import kiradirectory
