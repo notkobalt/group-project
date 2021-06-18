@@ -15,8 +15,7 @@ from bulkofproject.lucas import lucasdirectory
 from bulkofproject.jacob import jacobdirectory
 
 #register blueprints
-app.register_blueprint(classesminilab, url_prefix='/classes')
-app.register_blueprint(jacobbubblesort, url_prefix='/jacobbubblesort')
+
 app.register_blueprint(reviews_bp, url_prefix='/reviews')
 app.register_blueprint(account, url_prefix='/account')
 app.register_blueprint(kiradirectory, url_prefix='/kira')
