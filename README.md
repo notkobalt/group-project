@@ -31,6 +31,9 @@ We also want to include a login system to show user's reviews and details.
   - [Display Existing Reviews](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 30-33 [Database Query Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/query.py)
   - [Filter Database Based on User Input](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/__init__.py) Lines 12-29 [Filter Database Code](https://github.com/notkobalt/group-project/blob/main/bulkofproject/reviews/filter.py)
 
+## Crossover
+Our original parter group was the fishies, however they finished a week early and collaborated with another group in period 3. We were not informed, and due to the miscommunication we needed to collaborate with the "Web Errors" group because they also needed a parter. We display the fishies' API as per our original agreement, however the "Web Errors" group displays our API instead of the fishies. 
+
 # Progress 6/8
 ### Blueprints
 - Instead of creating a blueprint for every person in the group we will use blueprints to split the project into categories of code for organization
