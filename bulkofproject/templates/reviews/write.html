@@ -12,13 +12,13 @@
 
     <div class="banner">
         <div class="container">
-            <h1><b>Write a Review</b></h1>
+            <h1 style="padding-top:3%"><b>Write a Review</b></h1>
             <form method="post" class = "ff">
                 <!-- game -->
-                <p>Game: {{ game }}</p>
+                <p style="padding-left:34.5%; color:white; font-size:150%">Game: {{ game }}</p>
                 <!-- Stars Rating (Change Later, Only Here For Function ATM)  -->
                 <div class="form-group">
-                    <label for="stars">Stars</label>
+                    <label for="stars" style="color:white; font-size:100%">how many stars would you rate this game?</label>
                     <select name="stars" id="stars" class="form-control">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -29,7 +29,7 @@
                 </div>
                 <!-- Review -->
                 <div class="form-group">
-                    <label for="review">Write A Review Here (Max 2000 Characters)</label>
+                    <label for="review" style="color:white; font-size:100%">write a review here (max 2000 characters)</label>
                     <input type="text" name="review" id="review" class="form-control">
                 </div>
                 <div>
@@ -42,6 +42,15 @@
 </body>
 
 <style>
+
+    h1{
+    padding-left: 28%;
+        font-size: 350%;
+        font-family: "verdana";
+        color: white;
+    }
+
+
 
 </style>
 {% endblock %}
